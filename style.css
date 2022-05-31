@@ -150,6 +150,8 @@ body {
     margin:0 auto;
 }
 
+main {
+}
 a {
     text-decoration: none;
     color: black;
@@ -163,7 +165,7 @@ a {
     align-items: center;
     width: 100%;
     background-color: white;
-    height:80px;
+    height:65.2px;
     border-bottom: 1px solid lightgrey;
 }
 
@@ -238,7 +240,7 @@ footer {
 /*** APPS ***/
 
 /* Home */
-main {
+section {
     display:flex;
     justify-content: center;
     align-items: center;
@@ -249,7 +251,7 @@ main {
 .app-container {
     display:flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
     width:200px;
     height:300px;
@@ -257,6 +259,7 @@ main {
     color:black;
     text-decoration: none;
     text-align: center;
+    margin:30px 30px;
 }
 
 .app-img {
