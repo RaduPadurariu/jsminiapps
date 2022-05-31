@@ -1,21 +1,58 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="icon" href="./imgs/icon.jpg">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style.css">
-    <title>Mini Apps</title>
+    <title>Java Script Mini Apps</title>
 </head>
 <body>
+<!-- Header -->
     <nav class="header">
-        <div>Logo</div>
+        <div class="logo">
+           <a href="/"><img class="logo-img" src="./imgs/miniapps.png" alt=""></a> 
+        </div>
+
         <ul class="navbar">
-            <li>Apps</li>
-            <li>Contact</li>
+            <li class="lead" id="app-btn">
+                <button class="nav-btn p" >APPS</button> 
+               <div class="dropdown">
+                <div class="drop-arrow"></div>
+                <div class="app-links p">
+                    <a href="./html/apps/01_counter/index.html" class="p">COUNTER</a>
+                    <a href="./html/apps/02_todolist/index.html" class="p">TO DO LIST</a>
+                    <a href="./html/apps/03_agenda/index.html" class="p">AGENDA</a>
+                    <a href="./html/apps/04_rock-scissors-paper/index.html" class="p">ROCK, PAPER, SCISSORS</a>
+                    <a href="./html/apps/05_loop-game/index.html" class="p">LOOP GAME</a>
+                    <a href="./html/apps/06_survivor-game/index.html" class="p">SURVIVOR GAME</a>
+                    <a href="./html/apps/07_dog-catalog/index.html" class="p">DOG CATALOG</a>
+                    <a href="./html/apps/08_card-1/index.html" class="p">CARD 1</a>
+                </div>
+               </div>
+                
+            </li>
+            
+            <li class="lead"><button class="nav-btn p"><a href="./html/contact/index.html">CONTACT</a> </button> </li>
+            
         </ul>
     </nav>
-    <main></main>
-    <footer></footer>
+
+<!-- Main body -->
+    <main>
+        <div><a class="app-container m-1 lead" style="background:#55555559" href="./html/apps/01_counter/index.html"><img class="app-img"src="./imgs/clock.png" alt=""> Counter</a></div>
+        <div><a class="app-container m-1 lead" style="background:#33333339" href="">To Do list</a></div>
+        <div><a class="app-container m-1 lead" style="background:#11111119" href="">Agenda</a></div>
+        <div><a class="app-container m-1 lead" style="background:#77777779" href="">Rock, Paper, Scissors</a></div>
+        <div><a class="app-container m-1 lead" style="background:#99999999" href="">Loop Game</a></div>
+        <div><a class="app-container m-1 lead" style="background:lightpink" href="">Survivor Game</a></div>
+        <div><a class="app-container m-1 lead" style="background:darkcyan" href="">Dog Catalog</a></div>
+        <div><a class="app-container m-1 lead" style="background:darkgoldenrod" href="">Card 1</a></div>
+             
+    </main>
+    <footer class="p-1">
+        @ copywrite 2022 - Radu Padurariu
+    </footer>
     <script src="./main.js"></script>
 </body>
 </html>
