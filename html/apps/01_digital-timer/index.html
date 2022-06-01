@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../../style.css">
-    <title>Counter</title>
+    <title>Digital Timer</title>
 </head>
 <body>
 <!-- Header -->
@@ -20,14 +20,14 @@
                <div class="dropdown">
                 <div class="drop-arrow"></div>
                 <div class="app-links p">
-                    <a href="./html/apps/01_digital-timer/index.html" class="p">DIGITAL TIMER</a>
-                    <a href="./html/apps/02_todolist/index.html" class="p">TO DO LIST</a>
-                    <a href="./html/apps/03_agenda/index.html" class="p">AGENDA</a>
-                    <a href="./html/apps/04_rock-scissors-paper/index.html" class="p">ROCK, PAPER, SCISSORS</a>
-                    <a href="./html/apps/05_loop-game/index.html" class="p">LOOP GAME</a>
-                    <a href="./html/apps/06_survivor-game/index.html" class="p">SURVIVOR GAME</a>
-                    <a href="./html/apps/07_dog-catalog/index.html" class="p">DOG CATALOG</a>
-                    <a href="./html/apps/08_card-1/index.html" class="p">CARD 1</a>
+                    <a href="./index.html" class="p">DIGITAL TIMER</a>
+                    <a href="../../apps/02_todolist/index.html" class="p">TO DO LIST</a>
+                    <a href="../../apps/03_agenda/index.html" class="p">AGENDA</a>
+                    <a href="../../apps/04_rock-paper-scissors/index.html" class="p">ROCK, PAPER, SCISSORS</a>
+                    <a href="../../apps/05_loop-game/index.html" class="p">LOOP GAME</a>
+                    <a href="../../html/apps/06_survivor-game/index.html" class="p">SURVIVOR GAME</a>
+                    <a href="../../html/apps/07_dog-catalog/index.html" class="p">DOG CATALOG</a>
+                    <a href="../../html/apps/08_card-1/index.html" class="p">CARD 1</a>
                 </div>
                </div>
                 
@@ -40,18 +40,40 @@
 
 <!-- Main body -->
     <main>
-        <div class="container">
-            <h1>Digital Timer</h1>
-            <p>
-                <span id="hours">00</span>:<span id="minutes">00</span>:<span id="seconds"
-                >00</span>
-            </p>
-            <button id="start">Start</button>
-            <button id="stop">Stop</button>
-            <button id="reset">Reset</button>
-            <button id="save">Save</button>
-            <p></p>
-            <div id="saveData"></div>
+        <div class="container-digital-timer">
+            <h1 class="x-large m-3">DIGITAL TIMER</h1>
+
+                <div class="counter-container">
+                    <div class="digits">
+                        <div class="digits-container ">
+                            <span id="hours">00 </span> 
+                            <span class="small">HRS</span>
+                        </div> 
+                        <div class="digits-container ">
+                            <div>
+                               :<span id="minutes">00</span>:
+                            </div>
+                            
+                            <span class="small">MINS</span>
+                        </div>
+                        <div class="digits-container ">
+                            <span id="seconds">00</span>
+                            <span class="small">SECS</span>
+                        </div>  
+                    </div>
+
+                    
+                </div>
+                <div class="">
+                    <button class="digital-timer-btn" id="start">START</button>
+                    <button class="digital-timer-btn" id="stop">STOP</button>
+                    <button class="digital-timer-btn" id="reset">RESET</button>
+                    <button class="digital-timer-btn" id="save">SAVE</button>
+                    <div id="saveData">  <span>&nbsp</span></div>
+                    
+                </div>
+            
+                
         </div>
              
     </main>
