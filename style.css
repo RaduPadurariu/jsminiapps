@@ -10,6 +10,7 @@
 * {
     margin:0;
     padding:0;
+    box-sizing: border-box;
 }
 
 /* Text styles */
@@ -353,4 +354,107 @@ section {
     height:60vh;
     margin:auto 0;
     text-align: center;
+}
+
+.todo-input, .todo-btn, .todo-form{
+    border:none;
+    padding:0.5rem;
+    font-size: 2rem;
+    background: white;
+    border-radius: 5px;
+}
+
+.todo-btn {
+    color: brown;
+    background: white;
+    cursor:pointer;
+    transition: all 0.3 ease;
+}
+
+.todo-btn:hover {
+    background-color: orange;
+    color:white;
+
+}
+
+.todo-container {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.todo-list {
+   
+}
+.todo {
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    border-radius: 5px;
+    font-size: 1.5rem;
+    margin:5px 0;
+    transition: all 0.5s ease
+}
+
+
+.check-btn, .delete-btn {
+    background-color: lightgreen;
+    border: none;
+    border-radius: 5px;
+    padding: 1rem;
+    font-size: 1rem;
+
+}
+
+.todo-item {
+    max-width:200px;
+    text-align: left;
+    padding:0 0.4rem;
+}
+
+.completed {
+    text-decoration: line-through;
+    opacity:0.5;
+}
+
+.fall {
+    transform: translateY(8rem) rotateZ(20deg);
+    opacity:0;
+}
+
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    outline:none;
+    border:none;
+    
+}
+
+.select {
+    margin:1rem;
+    position:relative;
+    overflow:hidden;
+}
+
+select {
+    color:orange;
+    width:10rem;
+    cursor: pointer;
+    padding:1rem;
+}
+.select::after {
+    content:"\25BC";
+    position:absolute;
+    background:orange;
+    top:0;
+    right:0;
+    pointer-events: none;
+    padding:1rem;
+}
+
+.select:hover {
+    background: orange;
+    color:white;
 }

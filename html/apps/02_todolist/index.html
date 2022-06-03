@@ -1,11 +1,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="icon" href="../../../imgs/icons/counter.jpg">
+    <link rel="icon" href="../../../imgs/icons/to-do-list.png">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../../style.css">
-    <title>Digital Timer</title>
+    <title>TO DO LIST</title>
 </head>
 <body>
 <!-- Header -->
@@ -42,17 +42,23 @@
     <main>
         <div class="container-toDoList">
             <h1 class="x-large m">TO DO LIST</h1>
-
-                <div class="toDos-container">
-
+                <div class="select">
+                    <select name="todos" class="filter-todo">
+                        <option value="all">All</option>
+                        <option value="completed">Completed</option>
+                        <option value="uncompleted">Uncompleted</option>
+                    </select>
                 </div>
-                <div class="">
-                    <input type="text">
-                    <button class="toDo-btn" id="addToDo">+</button>
-                    
-                </div>
-            
                 
+                
+                
+                <div class="todo-container">
+                    <ul class="todo-list"></ul>
+                </div>
+                <form class="todo-form">
+                    <input type="text" class="todo-input">
+                    <button class="todo-btn" >+</button>
+                </form>
         </div>
              
     </main>
