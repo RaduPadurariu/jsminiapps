@@ -61,7 +61,7 @@ function createTodoHTML (todo) {
     // check button
     const checkBtn = document.createElement('button');
     const checkBtn_img = document.createElement('img');
-    checkBtn_img.src = "../../../imgs/icons/btn/check.png";
+    checkBtn_img.src = "./check.png";
     checkBtn_img.classList.add('imgBtn');
     checkBtn.appendChild(checkBtn_img);
     checkBtn.classList.add('check-btn');
@@ -70,7 +70,7 @@ function createTodoHTML (todo) {
     // delete button
     const deleteBtn = document.createElement('button');
     const deleteBtn_img = document.createElement('img');
-    deleteBtn_img.src = "../../../imgs/icons/btn/delete.png";
+    deleteBtn_img.src = "./delete.png";
     deleteBtn_img.classList.add('imgBtn');
     deleteBtn.appendChild(deleteBtn_img);
     deleteBtn.classList.add('delete-btn');
