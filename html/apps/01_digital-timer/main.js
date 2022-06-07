@@ -2,6 +2,20 @@ let hoursHTML = document.getElementById("hours");
 let minutesHTML = document.getElementById("minutes");
 let secondsHTML = document.getElementById("seconds");
 
+let btnStart = document.getElementById('start')
+let btnStop = document.getElementById('stop')
+let btnReset = document.getElementById('reset')
+let btnSave = document.getElementById('save')
+
+
+btnStart.addEventListener('click', startTimer);
+btnStop.addEventListener('click', stopTimer);
+btnReset.addEventListener('click', resetTimer);
+btnSave.addEventListener('click', saveTimer);
+
+
+
+
 let seconds = 0;
 let minutes = 0;
 let hours = 0;
@@ -35,10 +49,7 @@ function updateTimeHtml(seconds, minutes, hours) {
 }
 
 
-let btnStart = document.getElementById('start')
-let btnStop = document.getElementById('stop')
-let btnReset = document.getElementById('reset')
-let btnSave = document.getElementById('save')
+
 
 
 // Functions for buttons
@@ -46,7 +57,7 @@ let btnSave = document.getElementById('save')
 let timer;
 
 // Start button
-btnStart.addEventListener('click', function() {
+function startTimer() {
   timer = setInterval(function () {
     timeLogic(); 
     updateTimeHtml(seconds, minutes, hours);
@@ -54,19 +65,18 @@ btnStart.addEventListener('click', function() {
 
   btnStart.disabled = true;
   return timer;
-});
+};
  
-
 // Stop button
-btnStop.addEventListener('click', function() {
+function stopTimer() {
   clearInterval(timer);
   btnStart.disabled = false;
-});
+};
 
 let saveContainer = document.getElementById('saveData');
 
 // Reset button
-btnReset.addEventListener('click', function() {
+function resetTimer() {
   clearInterval(timer);
   seconds = 0;
   minutes = 0;
@@ -79,16 +89,15 @@ btnReset.addEventListener('click', function() {
     saveContainer.removeChild(saveContainer.firstChild);
   }
   
-});
-
+};
 
 // Save button
 
-btnSave.addEventListener('click', function() {
+function saveTimer () {
  
   let addSave = document.createElement('div');
   addSave.innerText = `${formatTime(hours)}:${formatTime(
     minutes
   )}:${formatTime(seconds)}`
   saveContainer.appendChild(addSave);
-});
+};

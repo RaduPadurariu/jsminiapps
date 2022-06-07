@@ -1,0 +1,164 @@
+/* TO DO LIST */
+
+.container-toDoList {
+    display:flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background: #e6beb9;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 750px;
+    height:60vh;
+    margin:auto 0;
+    text-align: center;
+}
+
+/* header container */
+
+.header-container {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    outline:none;
+    border:none;
+}
+
+.select-container {
+    margin:1rem;
+    position: relative;
+    overflow: hidden;
+    background: white;
+    width:10rem;
+    border-radius: 5px;
+}
+
+select {
+    color: black;
+    width:10rem;
+    cursor: pointer;
+    padding:0.2rem;
+}
+
+.select-container::after {
+    content:"\25BC";
+    position:absolute;
+    background: white;
+    top:0;
+    right:0;
+    padding:0.2rem;
+    pointer-events: none;
+}
+
+
+
+/* to do list container */
+.todo-container {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    height: 15rem;
+    overflow: auto;
+    width: 100%;
+}
+
+.todo-list {
+   width:60%;
+}
+
+.todo {
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.5s ease
+}
+
+.todo-item { 
+    text-align: left;
+    padding:0.2rem 0.4rem;
+    background: white;
+    font-size: 2rem;
+    margin:0.3rem 1rem 0.3rem 0;
+    border-radius: 5px;
+    word-wrap: break-word;
+    flex:1;
+    height:3rem;
+}
+
+.check-btn {
+    background-color: lightgreen;
+    border: none;
+    border-radius: 5px;
+    padding: 0.5rem;
+    margin:0.2rem;
+}
+
+
+.delete-btn {
+    background-color: rgb(196, 106, 106);
+    border: none;
+    border-radius: 5px;
+    padding: 0.5rem;
+    margin:0.2rem;
+}
+
+.imgBtn {
+    width:25px;
+    height:25px;
+    pointer-events: none;
+}
+
+.completed {
+    text-decoration: line-through;
+    opacity:0.5;
+}
+
+.fall {
+    transform: translateY(8rem) rotateZ(20deg);
+    opacity:0;
+}
+
+
+
+
+/* to do input */
+.todo-form {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+.todo-input, .todo-btn {
+    border-radius: 5px;
+    background: white;
+    color:black;
+    border:none;
+}
+
+.todo-input {
+    font-size: 2rem;
+    padding: 0.5rem;
+    width:90%;  
+}
+
+.todo-btn {
+    color: black;
+    background: lightgreen;
+    cursor:pointer;
+    transition: all 0.3 ease;
+    font-size: 3rem;
+    margin-left: 5px;
+    width: 3rem;
+    font-weight: bold;
+}
+
+.todo-btn:hover {
+    background-color: black;
+    color:white;
+   
+}
