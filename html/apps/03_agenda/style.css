@@ -1,0 +1,87 @@
+.container-agenda {
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background: #ebf3a7;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 750px;
+    height:60vh;
+    margin:auto 0;
+    text-align: center;
+}
+
+h1 {
+    margin: 5rem;
+}
+.header-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 2rem;
+}
+
+form {
+width:90%;
+}
+
+.new-contact {
+    margin-right: 1rem;
+}
+
+fieldset {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+
+    text-align: left;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+legend {
+    display: flex;
+    margin-left: 1rem;
+    font-weight: bold;
+    font-size: 1.5rem;
+    padding: 0 1rem;
+}
+
+.inputData-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.newUser-container {
+    display:flex;
+    margin: 1.5rem 0;
+}
+
+.userData-container {
+    display: flex;
+    flex-direction: column;
+    margin:0 1rem;
+}
+
+label, input {
+    margin: 0.3rem 0;
+   
+}
+
+input {
+    padding:0 0.2rem;
+    width:10rem;
+}
+
+.btnContact {
+    align-self:center;
+    border: none;
+    background-color: lightgreen;
+    border-radius: 20px;
+   
+}

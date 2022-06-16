@@ -1,11 +1,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="icon" href="../../../imgs/icons/counter.jpg">
+    <link rel="icon" href="../../../imgs/icons/agenda-book.png">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../../style.css">
-    <title>Counter</title>
+    <link rel="stylesheet" href="../../../app.css">
+    <link rel="stylesheet" href="./style.css">
+    <title>AGENDA</title>
 </head>
 <body>
 <!-- Header -->
@@ -17,17 +18,17 @@
         <ul class="navbar">
             <li class="lead" id="app-btn">
                 <button class="nav-btn p" >MINI-APPS</button> 
-               <div class="dropdown">
+                <div class="dropdown">
                 <div class="drop-arrow"></div>
                 <div class="app-links p">
-                    <a href="./html/apps/01_digital-timer/index.html" class="p">DIGITAL TIMER</a>
-                    <a href="./html/apps/02_todolist/index.html" class="p">TO DO LIST</a>
-                    <a href="./html/apps/03_agenda/index.html" class="p">AGENDA</a>
-                    <a href="./html/apps/04_rock-scissors-paper/index.html" class="p">ROCK, PAPER, SCISSORS</a>
-                    <a href="./html/apps/05_loop-game/index.html" class="p">LOOP GAME</a>
-                    <a href="./html/apps/06_survivor-game/index.html" class="p">SURVIVOR GAME</a>
-                    <a href="./html/apps/07_dog-catalog/index.html" class="p">DOG CATALOG</a>
-                    <a href="./html/apps/08_card-1/index.html" class="p">CARD 1</a>
+                    <a href="../../apps/01_digital-timer/index.html" class="p">DIGITAL TIMER</a>
+                    <a href="../../apps/02_todolist/index.html" class="p">TO DO LIST</a>
+                    <a href="./index.html" class="p">AGENDA</a>
+                    <a href="../../apps/04_rock-paper-scissors/index.html" class="p">ROCK, PAPER, SCISSORS</a>
+                    <a href="../../apps/05_loop-game/index.html" class="p">LOOP GAME</a>
+                    <a href="../../html/apps/06_survivor-game/index.html" class="p">SURVIVOR GAME</a>
+                    <a href="../../html/apps/07_dog-catalog/index.html" class="p">DOG CATALOG</a>
+                    <a href="../../html/apps/08_card-1/index.html" class="p">CARD 1</a>
                 </div>
                </div>
                 
@@ -40,18 +41,54 @@
 
 <!-- Main body -->
     <main>
-        <div class="container">
-            <h1>Digital Timer</h1>
-            <p>
-                <span id="hours">00</span>:<span id="minutes">00</span>:<span id="seconds"
-                >00</span>
-            </p>
-            <button id="start">Start</button>
-            <button id="stop">Stop</button>
-            <button id="reset">Reset</button>
-            <button id="save">Save</button>
-            <p></p>
-            <div id="saveData"></div>
+        <div class="container-agenda">
+            <div class="header-container">
+                <h1 class="x-large m-3">AGENDA</h1>
+                
+                <form class="newContact-container" action="submit">
+                    <fieldset>
+                        <legend><span class="new-contact">New Contact </span> </legend>
+                        
+                        <div class="inputData-container">
+                            <div class="newUser-container">
+                                <div class="userData-container">
+                                    <label for="first_name">First name</label>
+                                    <label for="last_name">Last name</label>
+                                    <label for="email">Email</label>
+                                </div>
+                                <div class="userData-container">
+                                    <input id="first_name" type="text" placeholder="First name">
+                                    <input id="last_name" type="text" placeholder="Last name">
+                                    <input id="email" type="text" placeholder="Email">
+                                </div>
+                            </div>
+                            <button class="btnContact" type="submit"><img width="40px" src="./save.png" alt=""></button>
+                            <div class="newUser-container">
+                                <div class="userData-container">
+                                    <label for="phone">Phone</label>
+                                    <label for="city">City</label>
+                                    <label for="country">Country</label>
+                                </div>
+                                <div class="userData-container">
+                                    <input id="phone" type="text" placeholder="Phone">
+                                    <input id="city" type="text" placeholder="City">
+                                    <input id="country" type="text" placeholder="Country">
+                                </div>
+                            </div>
+                            
+                        </div>
+                        
+                    </fieldset>
+                    
+                </form>
+               
+            </div>
+           
+                
+                
+                
+               
+            <ul>Aici se vor afisa contactele</ul>
         </div>
              
     </main>

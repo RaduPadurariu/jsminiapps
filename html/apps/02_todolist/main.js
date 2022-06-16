@@ -1,16 +1,16 @@
+// Selectors
 const todoInput = document.querySelector('.todo-input');
 const todoBtn = document.querySelector('.todo-btn');
 const todoList = document.querySelector('.todo-list');
 const filterOption = document.querySelector('.filter-todo')
 
-
-
+// Events
 document.addEventListener('DOMContentLoaded', getTodos);
 todoBtn.addEventListener('click', addTodo);
 todoList.addEventListener('click', deleteAndCheck);
 filterOption.addEventListener('click', filterTodo);
 
-
+// Functions
 function addTodo (event) {
     event.preventDefault();
   
@@ -50,10 +50,9 @@ function createTodoHTML (todo) {
     const newTodo = document.createElement('li');
     newTodo.innerText = todo;
     newTodo.classList.add('todo-item');
-
-
-
     todoDiv.appendChild(newTodo);
+
+    
     const btnContainer = document.createElement('div');
     todoDiv.appendChild(btnContainer);
  
