@@ -9,12 +9,10 @@
     max-width: 750px;
     height:60vh;
     margin:auto 0;
-    text-align: center;
+    
 }
 
-h1 {
-    margin: 5rem;
-}
+
 .header-container {
     display: flex;
     flex-direction: column;
@@ -22,22 +20,18 @@ h1 {
     align-items: center;
     width: 100%;
     margin: 0 auto;
-    margin-top: 2rem;
+ 
 }
 
 form {
 width:90%;
 }
 
-.new-contact {
-    margin-right: 1rem;
-}
 
 fieldset {
     display: flex;
     justify-content: space-between;
     flex-direction: column;
-
     text-align: left;
     border-radius: 5px;
     font-size: 1rem;
@@ -81,7 +75,51 @@ input {
 .btnContact {
     align-self:center;
     border: none;
-    background-color: lightgreen;
     border-radius: 20px;
-   
+    background-color: #ebf3a7;
+    font-size: 1rem;
+    font-weight:bold;
+    margin: 1rem;
+}
+
+
+.contact-container {
+    width: 100%;
+    overflow: auto;
+    max-height: 200px;
+}
+
+
+.new-contact {
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 1rem;
+    width: 80%;
+    margin: 0 auto 1.5rem auto;
+}
+
+.newContact-subContainer {
+    display: flex;
+    flex-direction: column;
+    margin-right: 5rem;
+    flex: 1;
+}
+
+.contact-icons {
+    width:25px;
+    margin: 0.5rem;
+}
+
+
+
+.data-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+
+.saveLink {
+    font-style: italic;
+    margin-bottom: 1rem;
 }

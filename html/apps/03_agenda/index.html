@@ -47,32 +47,33 @@
                 
                 <form class="newContact-container" action="submit">
                     <fieldset>
-                        <legend><span class="new-contact">New Contact </span> </legend>
+                        <legend><span>New Contact </span> </legend>
                         
                         <div class="inputData-container">
                             <div class="newUser-container">
                                 <div class="userData-container">
                                     <label for="first_name">First name</label>
                                     <label for="last_name">Last name</label>
-                                    <label for="email">Email</label>
+                                    <label for="phone">Phone</label>
                                 </div>
                                 <div class="userData-container">
-                                    <input id="first_name" type="text" placeholder="First name">
-                                    <input id="last_name" type="text" placeholder="Last name">
-                                    <input id="email" type="text" placeholder="Email">
+                                    <input class="first-name" id="first_name" type="text" placeholder="First name">
+                                    <input class="last-name" id="last_name" type="text" placeholder="Last name">
+                                    <input class="phone" id="phone" type="text" placeholder="Phone">
                                 </div>
                             </div>
-                            <button class="btnContact" type="submit"><img width="40px" src="./save.png" alt=""></button>
+                            
+                             <button class="btnContact"><img width="40px" src="./imgs/save.png" alt=""></button>
                             <div class="newUser-container">
                                 <div class="userData-container">
-                                    <label for="phone">Phone</label>
+                                    <label for="email">Email</label>
                                     <label for="city">City</label>
                                     <label for="country">Country</label>
                                 </div>
                                 <div class="userData-container">
-                                    <input id="phone" type="text" placeholder="Phone">
-                                    <input id="city" type="text" placeholder="City">
-                                    <input id="country" type="text" placeholder="Country">
+                                    <input class="email" id="email" type="text" placeholder="Email">
+                                    <input class="city" id="city" type="text" placeholder="City">
+                                    <input class="country" id="country" type="text" placeholder="Country">
                                 </div>
                             </div>
                             
@@ -83,12 +84,10 @@
                 </form>
                
             </div>
-           
-                
-                
-                
                
-            <ul>Aici se vor afisa contactele</ul>
+            <div class="contact-container"></div>
+
+            <div class="saveLink">*Contacts are saved on my personal Fake Rest API: <a target="_blank" href="https://radupadurariuserver.herokuapp.com">radupadurariuserver.herokuapp.com</a> </div>
         </div>
              
     </main>
