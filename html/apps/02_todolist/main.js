@@ -2,7 +2,8 @@
 const todoInput = document.querySelector('.todo-input');
 const todoBtn = document.querySelector('.todo-btn');
 const todoList = document.querySelector('.todo-list');
-const filterOption = document.querySelector('.filter-todo')
+const filterOption = document.querySelector('.filter-todo');
+const errorElem = document.querySelector('.error-container');
 
 // Events
 document.addEventListener('DOMContentLoaded', getTodos);
@@ -16,7 +17,6 @@ function addTodo (event) {
   
     // Add todo to local storage
     if( todoInput.value !=="" && todoInput.value!== " ") {
-        createTodoHTML(todoInput.value);
         saveLocalTodos(todoInput.value);
     }
     // clear values
@@ -117,8 +117,19 @@ function saveLocalTodos (todo) {
     else {
         todos = JSON.parse(localStorage.getItem("todos"));
     }
+
+    if (todos.includes(todo)) {
+        errorElem.innerText = "Todo already exists!";
+        setTimeout(function () {
+            errorElem.innerText = "";
+            }, 1500)
+       
+        return;
+    }
+        
     todos.push(todo);
     localStorage.setItem("todos", JSON.stringify(todos));
+    createTodoHTML(todo);
 }
 
 function getTodos () {

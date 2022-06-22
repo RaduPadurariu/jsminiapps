@@ -1,4 +1,5 @@
 // Selectors
+
 const firstNameElem = document.querySelector('.first-name');
 const lastNameElem = document.querySelector('.last-name');
 const emailElem = document.querySelector('.email');
@@ -6,27 +7,30 @@ const phoneElem = document.querySelector('.phone');
 const cityElem = document.querySelector('.city');
 const countryElem = document.querySelector('.country');
 const contactContainer = document.querySelector('.contact-container');
+const updateContactElem = document.querySelector('.updateContact');
+const saveContactElem = document.querySelector('.saveContact');
 
-const btnContactElem = document.querySelector('.btnContact');
 
 
 
 
 // Events
 
-btnContactElem.addEventListener('click', saveNewContact);
-
-
+saveContactElem.addEventListener('click', saveNewContact);
 
 
 
 // Functions
 
 
+
+
 // Get Contacts
 getContacts();
 
 function getContacts () {
+   
+    displayLoader();
     fetch('https://radupadurariuserver.herokuapp.com/agenda')
     .then( response => response.json())
     .then(renderContacts);
@@ -35,9 +39,8 @@ function getContacts () {
 
 // Render Contacts
 function renderContacts (data) {
-    
+    contactContainer.innerText = "";
     data.forEach(element => {
-        console.log(element);
         renderContactHTML (element);    
             }); 
     };
@@ -134,6 +137,45 @@ let contactElem = document.createElement('p');
                         let userContactAddressTextElem = document.createElement('span');
                         userContactAddressElem.appendChild(userContactAddressTextElem);
                         userContactAddressTextElem.innerText = element.city + ", " + element.country;
+
+
+            const btnContainer = document.createElement('div');
+            btnContainer.classList.add('btn-container')
+            contactElem.appendChild(btnContainer);
+            
+            // edit button
+            const editBtn = document.createElement('button');
+            const editBtn_img = document.createElement('img');
+            editBtn_img.src = "./imgs/edit.png";
+            editBtn_img.classList.add('imgBtn');
+            editBtn.appendChild(editBtn_img);
+            editBtn.classList.add('edit-btn');
+            btnContainer.appendChild(editBtn);
+
+            editBtn.addEventListener('click', function () {
+                saveContactElem.style.display = "none";
+                updateContactElem.style.display = "flex";
+
+                completeFields (element);
+                updateContactElem.addEventListener('click', function () {
+                    event.preventDefault();
+                    updateContacts(element);
+                })
+            })
+        
+            // delete button
+            const deleteBtn = document.createElement('button');
+            const deleteBtn_img = document.createElement('img');
+            deleteBtn_img.src = "./imgs/delete.png";
+            deleteBtn_img.classList.add('imgBtn');
+            deleteBtn.appendChild(deleteBtn_img);
+            deleteBtn.classList.add('delete-btn');
+            btnContainer.appendChild(deleteBtn);
+
+            deleteBtn.addEventListener('click', function () {
+                deleteContact(element.id);
+            })
+        
 }
 
 
@@ -154,13 +196,16 @@ function saveNewContact (event) {
     fetch('https://radupadurariuserver.herokuapp.com/agenda', {
         headers: {
             Accept: "application/json",
-            "Content-Type": "application/json"
+            "Content-Type": "application/json",
+            "CORS" :"access-control-allow-origin",
+            "access-control-allow-origin" : "*"
         },
         method: "POST",
         body: JSON.stringify(newContact)
     })
     .then(response => response.json())
     .then(renderContactHTML)
+    .then(getContacts);
 
     clearFields();
 }
@@ -173,3 +218,58 @@ function clearFields () {
     cityElem.value = '';
     countryElem.value = '';
 }
+
+// Edit and Delete
+
+function deleteContact (id) {
+    fetch('https://radupadurariuserver.herokuapp.com/agenda/' + id, {
+        method: "DELETE"
+    })
+    .then(getContacts);
+}
+
+function updateContacts (userData) {
+    
+    updateContactElem.style.display = "none";
+    saveContactElem.style.display = "flex";
+
+    userData.first_name = firstNameElem.value;
+    userData.last_name = lastNameElem.value;
+    userData.phone = phoneElem.value;
+    userData.email = emailElem.value;
+    userData.city = cityElem.value;
+    userData.country = countryElem.value;
+    
+    fetch('https://radupadurariuserver.herokuapp.com/agenda/' + userData.id, {
+  headers: {
+    Accept: "application/json",
+    "Content-Type": "application/json",
+    "access-control-allow-origin" : "*"
+  },
+  method: "PUT",
+  body: JSON.stringify(userData)
+  })
+  .then(response => response.json())
+  .then(getContacts)
+  clearFields ();
+}
+
+
+function displayLoader () {
+    const loadingElem = document.createElement('img');
+    contactContainer.innerText = "";
+    loadingElem.src="./imgs/spinner.gif";
+    loadingElem.classList.add('loading-spinner');  
+    contactContainer.appendChild(loadingElem);   
+}
+
+
+// complete fields when updating
+function completeFields (userData) {
+    firstNameElem.value = userData.first_name;
+    lastNameElem.value = userData.last_name;
+    phoneElem.value = userData.phone;
+    emailElem.value = userData.email;
+    cityElem.value = userData.city;
+    countryElem.value = userData.country;
+  }
