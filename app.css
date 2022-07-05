@@ -13,6 +13,14 @@
     box-sizing: border-box;
 }
 
+.flex {
+    display:flex;
+}
+
+.flex-column {
+    display:flex;
+    flex-direction: column;
+}
 /* Text styles */
 .x-large {
     font-size:4rem;

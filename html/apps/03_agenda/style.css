@@ -7,9 +7,7 @@
     border-radius: 10px;
     width: 100%;
     max-width: 750px;
-    height:60vh;
-    margin:auto 0;
-    
+    margin:1rem 0;
 }
 
 
@@ -90,9 +88,11 @@ input {
 .contact-container {
     width: 100%;
     overflow: auto;
+    min-height:100px;
     max-height: 200px;
     display: flex;
     flex-direction: column;
+    margin-top: 1rem;
 }
 
 /* Add new contact */

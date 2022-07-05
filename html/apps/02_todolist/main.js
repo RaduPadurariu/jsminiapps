@@ -43,6 +43,7 @@ function deleteAndCheck (e) {
     }
 }
 
+// Render functions
 function createTodoHTML (todo) {
     const todoDiv = document.createElement('div');
     todoDiv.classList.add('todo');
@@ -52,11 +53,9 @@ function createTodoHTML (todo) {
     newTodo.classList.add('todo-item');
     todoDiv.appendChild(newTodo);
 
-    
     const btnContainer = document.createElement('div');
     todoDiv.appendChild(btnContainer);
  
-
     // check button
     const checkBtn = document.createElement('button');
     const checkBtn_img = document.createElement('img');
@@ -106,8 +105,7 @@ function filterTodo (e) {
         }
     });
 }
-
-
+// Local storage
 function saveLocalTodos (todo) {
     // is there a todos in local storage?
     let todos;
@@ -158,5 +156,4 @@ function removeLocalTodos (todo) {
     const todoIndex = todo.children[0].innerText;
     todos.splice(todos.indexOf(todoIndex), 1);
     localStorage.setItem("todos", JSON.stringify(todos));
-   
 }

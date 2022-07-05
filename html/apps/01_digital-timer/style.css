@@ -9,8 +9,7 @@
     border-radius: 10px;
     width: 100%;
     max-width: 750px;
-    height:60vh;
-    margin:auto 0;
+    margin:1rem 0;
     text-align: center;
 }
 
@@ -21,7 +20,7 @@
     font-size: 4rem;
     font-family: "Digital-7";
     display: flex;
-
+    margin-bottom: 1rem;
 }
 
 .digits-container {

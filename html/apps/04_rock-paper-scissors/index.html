@@ -1,11 +1,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="icon" href="../../../imgs/icons/counter.jpg">
+    <link rel="icon" href="../../../imgs/icons/rock-paper-scissors.png">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../../style.css">
-    <title>Counter</title>
+    <link rel="stylesheet" href="../../../app.css">
+    <link rel="stylesheet" href="./style.css">
+    <title>ROCK PAPER SCISSORS</title>
 </head>
 <body>
 <!-- Header -->
@@ -14,47 +15,53 @@
            <a href="/"><img class="logo-img" src="../../../imgs/miniapps.png" alt=""></a> 
         </div>
 
+        <!-- Navigation -->
         <ul class="navbar">
             <li class="lead" id="app-btn">
                 <button class="nav-btn p" >MINI-APPS</button> 
-               <div class="dropdown">
+                <div class="dropdown">
                 <div class="drop-arrow"></div>
                 <div class="app-links p">
-                    <a href="./html/apps/01_digital-timer/index.html" class="p">DIGITAL TIMER</a>
-                    <a href="./html/apps/02_todolist/index.html" class="p">TO DO LIST</a>
-                    <a href="./html/apps/03_agenda/index.html" class="p">AGENDA</a>
-                    <a href="./html/apps/04_rock-scissors-paper/index.html" class="p">ROCK, PAPER, SCISSORS</a>
-                    <a href="./html/apps/05_loop-game/index.html" class="p">LOOP GAME</a>
-                    <a href="./html/apps/06_survivor-game/index.html" class="p">SURVIVOR GAME</a>
-                    <a href="./html/apps/07_dog-catalog/index.html" class="p">DOG CATALOG</a>
-                    <a href="./html/apps/08_card-1/index.html" class="p">CARD 1</a>
+                    <a href="../../apps/01_digital-timer/index.html" class="p">DIGITAL TIMER</a>
+                    <a href="../../apps/02_todolist/index.html" class="p">TO DO LIST</a>
+                    <a href="../../apps/03_agenda/index.html" class="p">AGENDA</a>
+                    <a href="./index.html" class="p">ROCK, PAPER, SCISSORS</a>
+                    <a href="../../apps/05_loop-game/index.html" class="p">LOOP GAME</a>
+                    <a href="../../html/apps/06_survivor-game/index.html" class="p">SURVIVOR GAME</a>
+                    <a href="../../html/apps/07_dog-catalog/index.html" class="p">DOG CATALOG</a>
+                    <a href="../../html/apps/08_card-1/index.html" class="p">CARD 1</a>
                 </div>
                </div>
                 
             </li>
             
-            <li class="lead"><button class="nav-btn p"><a href="./html/contact/index.html">CONTACT</a> </button> </li>
+            <li class="lead"><button class="nav-btn p"><a href="../../../html/contact/index.html">CONTACT</a> </button> </li>
             
         </ul>
     </nav>
 
 <!-- Main body -->
     <main>
-        <div class="container">
-            <h1>Digital Timer</h1>
-            <p>
-                <span id="hours">00</span>:<span id="minutes">00</span>:<span id="seconds"
-                >00</span>
-            </p>
-            <button id="start">Start</button>
-            <button id="stop">Stop</button>
-            <button id="reset">Reset</button>
-            <button id="save">Save</button>
-            <p></p>
-            <div id="saveData"></div>
+        <div class="container-rockPaperScissors">
+            <div class="header-container">
+                <h1 class="x-large m-3">ROCK PAPER SCISSORS</h1>
+            </div>
+               
+            <div class="game-container">
+                <div class="gameMenu-container">
+                    <button id="btnSingle" class="btnMenu">SINGLE PLAYER</button>
+                    <button id="btnMulti" class="btnMenu">MULTI PLAYER</button>
+                    <button class="btnMenu"><a class="btnMenu" href="/">QUIT</a> </button>
+                </div>
+                <div class="rpsGame-container"></div>
+            </div>
+
+           <div></div>
         </div>
              
     </main>
+    
+    <!-- Footer -->
     <footer class="p-1">
         @ copywrite 2022 - Radu Padurariu
     </footer>
