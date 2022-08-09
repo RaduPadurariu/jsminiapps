@@ -12,7 +12,7 @@
 <!-- Header -->
     <nav class="header">
         <div class="logo">
-           <a href="/"><img class="logo-img" src="../../../imgs/miniapps.png" alt=""></a> 
+           <a href="/"><img class="logo-img" src="../../../imgs/apps.png" alt=""></a> 
         </div>
         <!-- Navigation -->
         <ul class="navbar">
@@ -25,10 +25,9 @@
                     <a href="../../apps/02_todolist/index.html" class="p">TO DO LIST</a>
                     <a href="./index.html" class="p">AGENDA</a>
                     <a href="../../apps/04_rock-paper-scissors/index.html" class="p">ROCK, PAPER, SCISSORS</a>
-                    <a href="../../apps/05_loop-game/index.html" class="p">LOOP GAME</a>
-                    <a href="../../html/apps/06_survivor-game/index.html" class="p">SURVIVOR GAME</a>
-                    <a href="../../html/apps/07_dog-catalog/index.html" class="p">DOG CATALOG</a>
-                    <a href="../../html/apps/08_card-1/index.html" class="p">CARD 1</a>
+                    <a href="../../apps/05_loop-game/index.html" class="p">RACE GAME</a>
+                    <a href="" class="p">DOG QUIZ (soon)</a>
+                    
                 </div>
                </div>
                 
@@ -57,14 +56,15 @@
                                     <label for="phone">Phone</label>
                                 </div>
                                 <div class="userData-container">
-                                    <input class="first-name" id="first_name" type="text" placeholder="First name">
-                                    <input class="last-name" id="last_name" type="text" placeholder="Last name">
-                                    <input class="phone" id="phone" type="text" placeholder="Phone">
+                                    <input class="first-name" id="first_name" type="text" maxLength= "20" placeholder="First name">
+                                    <input class="last-name" id="last_name" type="text" maxLength= "20" placeholder="Last name">
+                                    <input class="phone" id="phone" type="text" maxLength= "16" placeholder="Phone">
                                 </div>
                             </div>
                              
-                             <button class="saveContact"><img width="40px" src="./imgs/save.png" alt=""></button>
-                             <button class="updateContact"><img width="40px" src="./imgs/update.png" alt=""></button>
+                             <button id="saveContact" class="saveContact"><img width="40px" src="./imgs/save.png" alt=""></button>
+                             <div class="updateContact"></div>
+                             <!-- <button id="updateContact" class="updateContact"><img width="40px" src="./imgs/update.png" alt=""></button> -->
                             <div class="newUser-container">
                                 <div class="userData-container">
                                     <label for="email">Email</label>
@@ -72,9 +72,9 @@
                                     <label for="country">Country</label>
                                 </div>
                                 <div class="userData-container">
-                                    <input class="email" id="email" type="text" placeholder="Email">
-                                    <input class="city" id="city" type="text" placeholder="City">
-                                    <input class="country" id="country" type="text" placeholder="Country">
+                                    <input class="email" id="email" type="text" maxLength= "32" placeholder="Email">
+                                    <input class="city" id="city" type="text" maxLength= "24" placeholder="City">
+                                    <input class="country" id="country" type="text" maxLength= "20" placeholder="Country">
                                 </div>
                             </div>
                             
@@ -90,13 +90,13 @@
 
             <div class="saveLink">*Contacts are saved on my personal Fake Rest API: <a target="_blank" href="https://radupadurariuserver.herokuapp.com">radupadurariuserver.herokuapp.com</a> </div>
         </div>
-             
+        
     </main>
-
     <!-- Footer -->
     <footer class="p-1">
         @ copywrite 2022 - Radu Padurariu
-    </footer>
+    </footer>  
+    
     <script src="./main.js"></script>
 </body>
 </html>

@@ -1,3 +1,4 @@
+/* MAIN CONTAINER */
 .container-agenda {
     display:flex;
     flex-direction: column;
@@ -10,7 +11,7 @@
     margin:1rem 0;
 }
 
-
+/* Header container */
 .header-container {
     display: flex;
     flex-direction: column;
@@ -18,13 +19,12 @@
     align-items: center;
     width: 100%;
     margin: 0 auto;
- 
 }
 
+/* FORM */
 form {
 width:90%;
 }
-
 
 fieldset {
     display: flex;
@@ -49,6 +49,7 @@ legend {
     flex-wrap: wrap;
 }
 
+/* Contacts container */
 .newUser-container {
     display:flex;
     margin: 1.5rem 0;
@@ -70,7 +71,7 @@ input {
     width:10rem;
 }
 
-.saveContact, .updateContact{
+.saveContact, .updateContactBtn{
     align-self:center;
     border: none;
     border-radius: 20px;
@@ -89,16 +90,13 @@ input {
     width: 100%;
     overflow: auto;
     min-height:100px;
-    max-height: 200px;
+    height: 200px;
     display: flex;
     flex-direction: column;
     margin-top: 1rem;
 }
 
 /* Add new contact */
-
-
-
 .new-contact {
     display: flex;
     justify-content: space-between;

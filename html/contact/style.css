@@ -1,0 +1,45 @@
+.container-contact {
+    display:flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background: rgb(212, 238, 187);
+    border-radius: 10px;
+    width: 100%;
+    max-width: 750px;
+    margin:1rem 0;
+    text-align: center;
+}
+
+
+
+
+.contact-btn {
+    color:black;
+    background-color: lightgrey;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: voyager;
+    border:2px solid #4ccaf0;
+    padding:10px;
+    border-radius: 8px;
+    text-decoration: none;
+    margin: 3rem 0;
+    
+}
+
+.contact-btn:hover {
+    background-color: darkgrey;
+ }
+
+.contact-website {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.website {
+    margin-top: 10rem;
+}
+

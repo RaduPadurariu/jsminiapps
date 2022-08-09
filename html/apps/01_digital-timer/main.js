@@ -2,6 +2,7 @@
 let hoursHTML = document.getElementById("hours");
 let minutesHTML = document.getElementById("minutes");
 let secondsHTML = document.getElementById("seconds");
+let saveContainer = document.getElementById('saveData');
 
 let btnStart = document.getElementById('start')
 let btnStop = document.getElementById('stop')
@@ -70,7 +71,7 @@ function stopTimer() {
   btnStart.disabled = false;
 };
 
-let saveContainer = document.getElementById('saveData');
+
 
 // Reset button
 function resetTimer() {
@@ -91,8 +92,6 @@ function resetTimer() {
 function saveTimer () {
  
   let addSave = document.createElement('div');
-  addSave.innerText = `${formatTime(hours)}:${formatTime(
-    minutes
-  )}:${formatTime(seconds)}`
+  addSave.innerText = `${formatTime(hours)}:${formatTime(minutes)}:${formatTime(seconds)}`;
   saveContainer.appendChild(addSave);
 };

@@ -45,6 +45,7 @@ function savePlayersNames () {
     player1TitleElem.classList.add ('players');
     player1TitleElem.innerText = "Player 1: ";
     const player1InputElem = document.createElement('input');
+    player1InputElem.maxLength = "12";
     player1InputElem.classList.add('players-input');
     player1ContainerElem.appendChild(player1InputElem);
     playersNameElem.appendChild(player1ContainerElem);
@@ -58,9 +59,16 @@ function savePlayersNames () {
     player2TitleElem.classList.add ('players');
     player2TitleElem.innerText = "Player 2: "
     const player2InputElem = document.createElement('input');
+    player2InputElem.maxLength = "12";
     player2InputElem.classList.add('players-input');
     player2ContainerElem.appendChild(player2InputElem);
     playersNameElem.appendChild(player2ContainerElem);
+
+    // Error name container
+    const errorNameElem = document.createElement('div');
+    errorNameElem.classList.add('errorName');
+    errorNameElem.innerText = ""
+    playersNameElem.appendChild(errorNameElem);
 
     // save button
     const saveBtnPlayerNames = document.createElement('button');
@@ -68,9 +76,16 @@ function savePlayersNames () {
     rpsGameElem.appendChild(saveBtnPlayerNames);
     saveBtnPlayerNames.innerText = "Save";
     saveBtnPlayerNames.addEventListener('click', () => {
-        rpsPlayers = [player1InputElem.value, player2InputElem.value];
-        rpsChoices = [];
-        multiPlayerGame (rpsPlayers, rpsChoices);
+        if ((player1InputElem.value === "" || player1InputElem.value === " ") || (player2InputElem.value === "" || player2InputElem.value === " ")) {
+            errorNameElem.innerText = "Please enter a valid name";
+        }
+        else {
+            errorNameElem.innerText = "";
+            rpsPlayers = [player1InputElem.value, player2InputElem.value];
+            rpsChoices = [];
+            multiPlayerGame (rpsPlayers, rpsChoices);
+        }
+        
     });
 
     backBtn ();

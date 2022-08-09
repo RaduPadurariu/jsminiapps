@@ -1,49 +1,36 @@
 // Selectors
-
-const firstNameElem = document.querySelector('.first-name');
-const lastNameElem = document.querySelector('.last-name');
-const emailElem = document.querySelector('.email');
-const phoneElem = document.querySelector('.phone');
-const cityElem = document.querySelector('.city');
-const countryElem = document.querySelector('.country');
 const contactContainer = document.querySelector('.contact-container');
 const updateContactElem = document.querySelector('.updateContact');
 const saveContactElem = document.querySelector('.saveContact');
 
-
-
-
-
 // Events
-
 saveContactElem.addEventListener('click', saveNewContact);
-
-
 
 // Functions
 
-
-
-
 // Get Contacts
-getContacts();
 
+// setInterval(getContacts, 200);
 function getContacts () {
-   
     displayLoader();
-    fetch('https://radupadurariuserver.herokuapp.com/agenda')
-    .then( response => response.json())
+    fetch('https://gentle-scrubland-92477.herokuapp.com/https://radupadurariuserver.herokuapp.com/agenda')
+    .then(processResponse)
     .then(renderContacts);
 }
 
+function processResponse(response) {
+    return response.json();
+}
 
 // Render Contacts
 function renderContacts (data) {
-    contactContainer.innerText = "";
-    data.forEach(element => {
-        renderContactHTML (element);    
-            }); 
+    contactContainer.innerText = ""; 
+    for (const user of data) {
+        renderContactHTML(user);
+    }
     };
+
+getContacts();
 
 
 // Render contact HTML
@@ -153,13 +140,25 @@ let contactElem = document.createElement('p');
             btnContainer.appendChild(editBtn);
 
             editBtn.addEventListener('click', function () {
-                saveContactElem.style.display = "none";
+                document.getElementById('saveContact').style.display = "none";
                 updateContactElem.style.display = "flex";
 
                 completeFields (element);
-                updateContactElem.addEventListener('click', function () {
-                    event.preventDefault();
-                    updateContacts(element);
+                editBtn.disabled = true;
+                // Create update button
+                updateContactElem.innerText = "";
+                const updateBtn = document.createElement('button');
+                updateBtn.classList.add('updateContactBtn')
+                const updateBtnImg = document.createElement('img');
+                updateBtnImg.style.width = "40px";
+                updateBtnImg.src = "./imgs/update.png";
+                updateBtn.appendChild(updateBtnImg);
+                updateContactElem.appendChild(updateBtn);
+                
+                // Update contacts
+                updateBtn.addEventListener('click', function () {
+                    updateContacts(element, updateBtn);
+                    editBtn.disabled = false;
                 })
             })
         
@@ -185,76 +184,74 @@ function saveNewContact (event) {
     event.preventDefault();
 
     const newContact = {
-        first_name: firstNameElem.value,
-        last_name: lastNameElem.value,
-        phone: phoneElem.value,
-        email: emailElem.value,
-        city: cityElem.value,
-        country: countryElem.value
+        first_name: document.getElementById('first_name').value,
+        last_name: document.getElementById('last_name').value,
+        phone: document.getElementById('phone').value,
+        email: document.getElementById('email').value,
+        city: document.getElementById('city').value,
+        country: document.getElementById('country').value
     }
 
-    fetch('https://radupadurariuserver.herokuapp.com/agenda', {
+    fetch('https://gentle-scrubland-92477.herokuapp.com/https://radupadurariuserver.herokuapp.com/agenda', {
         headers: {
             Accept: "application/json",
             "Content-Type": "application/json",
-            "CORS" :"access-control-allow-origin",
-            "access-control-allow-origin" : "*"
         },
         method: "POST",
         body: JSON.stringify(newContact)
     })
     .then(response => response.json())
-    .then(renderContactHTML)
-    .then(getContacts);
+    .then(getContacts)
 
     clearFields();
 }
 
 function clearFields () {
-    firstNameElem.value = '';
-    lastNameElem.value = '';
-    phoneElem.value = '';
-    emailElem.value = '';
-    cityElem.value = '';
-    countryElem.value = '';
+    document.getElementById('first_name').value = '';
+    document.getElementById('last_name').value = '';
+    document.getElementById('phone').value = '';
+    document.getElementById('email').value = '';
+    document.getElementById('city').value = '';
+    document.getElementById('country').value = '';
 }
 
 // Edit and Delete
 
 function deleteContact (id) {
-    fetch('https://radupadurariuserver.herokuapp.com/agenda/' + id, {
+    fetch('https://gentle-scrubland-92477.herokuapp.com/https://radupadurariuserver.herokuapp.com/agenda/' + id, {
         method: "DELETE"
     })
-    .then(getContacts);
+    .then(getContacts)
 }
 
-function updateContacts (userData) {
+function updateContacts (userData, buttonUpdate) {
+    buttonUpdate.remove();
+    document.getElementById('saveContact').style.display = "flex";
+    // document.getElementById('updateContact').style.display = "none";
     
-    updateContactElem.style.display = "none";
-    saveContactElem.style.display = "flex";
 
-    userData.first_name = firstNameElem.value;
-    userData.last_name = lastNameElem.value;
-    userData.phone = phoneElem.value;
-    userData.email = emailElem.value;
-    userData.city = cityElem.value;
-    userData.country = countryElem.value;
-    
-    fetch('https://radupadurariuserver.herokuapp.com/agenda/' + userData.id, {
+    userData.first_name = document.getElementById('first_name').value;
+    userData.last_name = document.getElementById('last_name').value;
+    userData.phone = document.getElementById('phone').value;
+    userData.email = document.getElementById('email').value;
+    userData.city = document.getElementById('city').value;
+    userData.country = document.getElementById('country').value;
+
+    fetch('https://gentle-scrubland-92477.herokuapp.com/https://radupadurariuserver.herokuapp.com/agenda/' + userData.id, {
   headers: {
     Accept: "application/json",
     "Content-Type": "application/json",
-    "access-control-allow-origin" : "*"
   },
   method: "PUT",
   body: JSON.stringify(userData)
   })
-  .then(response => response.json())
+  .then(processResponse)
   .then(getContacts)
   clearFields ();
 }
 
 
+// loader
 function displayLoader () {
     const loadingElem = document.createElement('img');
     contactContainer.innerText = "";
@@ -266,10 +263,10 @@ function displayLoader () {
 
 // complete fields when updating
 function completeFields (userData) {
-    firstNameElem.value = userData.first_name;
-    lastNameElem.value = userData.last_name;
-    phoneElem.value = userData.phone;
-    emailElem.value = userData.email;
-    cityElem.value = userData.city;
-    countryElem.value = userData.country;
-  }
+    document.getElementById('first_name').value = userData.first_name;
+    document.getElementById('last_name').value = userData.last_name;
+    document.getElementById('phone').value = userData.phone;
+    document.getElementById('email').value = userData.email;
+    document.getElementById('city').value = userData.city;
+    document.getElementById('country').value = userData.country;
+}
