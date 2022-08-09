@@ -162,6 +162,10 @@ body {
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     height:100vh;
     margin:0 auto;
+    background: rgb(245, 242, 242);
+    /* background-image: url("./imgs/background.png");
+    background-position: center;
+    background-size: cover; */
 }
 
 main {
@@ -185,7 +189,6 @@ a {
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    background-color: white;
     height:65.2px;
     border-bottom: 1px solid lightgrey;
     max-width: 750px;
@@ -193,7 +196,7 @@ a {
 
 /* Logo */
 .logo-img {
-    width: 5rem;
+    width: 4rem;
     border-radius: 5px;
 }
 
@@ -201,14 +204,16 @@ a {
 .navbar {
     display: flex;
     position: relative;
-    
+    background-color: transparent;
 }
 
 .nav-btn {
-    font-size: 1.2rem;
-    background-color: white;
+    font-size: 1.4rem;
+    /* font-weight: bold; */
     border: none;
     cursor: pointer;
+    background-color: transparent;
+    padding: 0.8rem 1.2rem;
 }
 
 .nav-btn:hover {
@@ -291,8 +296,13 @@ section {
     text-decoration: none;
     text-align: center;
     margin:30px;
+    box-shadow: 3px 3px 5px 2px #888888;
 }
 
+.app-container:hover {
+    transform: scale(1.05);
+    transition: transform .2s;
+}
 .app-img {
     width:100px;
 }
