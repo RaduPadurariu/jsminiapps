@@ -1,69 +1,76 @@
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <link rel="icon" href="../../../imgs/icons/loop-game.png">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../../style.css">
-    <link rel="stylesheet" href="./style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="../../../imgs/icons/loop-game.png" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="keywords"
+      content="java script, MINI-APPS, Radu Padurariu, OOP, Race Game"
+    />
+    <meta name="description" content="A race game made with Java Script" />
+    <link rel="stylesheet" href="../../../style.css" />
+    <link rel="stylesheet" href="./style.css" />
     <title>RACE GAME</title>
-</head>
-<body>
-<!-- Header -->
+  </head>
+  <body>
+    <!-- Header -->
     <nav class="header">
-        <div class="logo">
-           <a href="/"><img class="logo-img" src="../../../imgs/apps.png" alt=""></a> 
-        </div>
+      <div class="logo">
+        <a href="/"
+          ><img class="logo-img" src="../../../imgs/apps.png" alt=""
+        /></a>
+      </div>
 
-        <!-- Navigation -->
-        <ul class="navbar">
-            <li class="lead" id="app-btn">
-                <button class="nav-btn p" >MINI-APPS</button> 
-                <div class="dropdown">
-                <div class="drop-arrow"></div>
-                <div class="app-links p">
-                    <a href="../../apps/01_digital-timer/index.html" class="p">DIGITAL TIMER</a>
-                    <a href="../../apps/02_todolist/index.html" class="p">TO DO LIST</a>
-                    <a href="../../apps/03_agenda/index.html" class="p">AGENDA</a>
-                    <a href="../../apps/04_rock-paper-scissors/" class="p">ROCK, PAPER, SCISSORS</a>
-                    <a href="./index.html" class="p">RACE GAME</a>
-                    <a href="" class="p">DOG QUIZ (soon)</a>
-                    
-                </div>
-               </div>
-                
-            </li>
-            
-            <li class="lead"><button class="nav-btn p"><a href="../../../html/contact/index.html">CONTACT</a> </button> </li>
-            
-        </ul>
+      <!-- Navigation -->
+      <ul class="navbar">
+        <li class="lead" id="app-btn">
+          <button class="nav-btn p">MINI-APPS</button>
+          <div class="dropdown">
+            <div class="drop-arrow"></div>
+            <div class="app-links p">
+              <a href="../../apps/01_digital-timer/index.html" class="p"
+                >DIGITAL TIMER</a
+              >
+              <a href="../../apps/02_todolist/index.html" class="p"
+                >TO DO LIST</a
+              >
+              <a href="../../apps/03_agenda/index.html" class="p">AGENDA</a>
+              <a href="../../apps/04_rock-paper-scissors/" class="p"
+                >ROCK, PAPER, SCISSORS</a
+              >
+              <a href="./index.html" class="p">RACE GAME</a>
+              <a href="" class="p">DOG QUIZ (soon)</a>
+            </div>
+          </div>
+        </li>
+
+        <li class="lead">
+          <button class="nav-btn p">
+            <a href="../../../html/contact/index.html">CONTACT</a>
+          </button>
+        </li>
+      </ul>
     </nav>
 
-<!-- Main body -->
+    <!-- Main body -->
     <main>
-        <div class="container-raceGame">
-            <div class="header-container">
-                <h1 class="x-large">RACE GAME</h1>
-                <div class="lives-container" id="lives-container"></div>
-                <div class="replay-btn" id="replay-btn"></div>
-            </div>
-            
-            <div class="highway-trees">
-
-            </div>
-            <div id="game-container" class="game-container">
-                
-            </div>
-
-           <div></div>
+      <div class="container-raceGame">
+        <div class="header-container">
+          <h1 class="x-large">RACE GAME</h1>
+          <div class="lives-container" id="lives-container"></div>
+          <div class="replay-btn" id="replay-btn"></div>
         </div>
-             
+
+        <div class="highway-trees"></div>
+        <div id="game-container" class="game-container"></div>
+
+        <div></div>
+      </div>
     </main>
-    
+
     <!-- Footer -->
-    <footer class="p-1">
-        @ copywrite 2022 - Radu Padurariu
-    </footer>
+    <footer class="p-1">@ copywrite 2022 - Radu Padurariu</footer>
     <script src="./main.js"></script>
-</body>
+  </body>
 </html>

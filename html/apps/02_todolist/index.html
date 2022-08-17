@@ -1,78 +1,87 @@
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <link rel="icon" href="../../../imgs/icons/to-do-list.png">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../../style.css">
-    <link rel="stylesheet" href="./style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="../../../imgs/icons/to-do-list.png" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="keywords"
+      content="java script, MINI-APPS, Radu Padurariu, SIIT, To Do list"
+    />
+    <meta name="description" content="A to do list made with Java Script" />
+    <link rel="stylesheet" href="../../../style.css" />
+    <link rel="stylesheet" href="./style.css" />
     <title>TO DO LIST</title>
-</head>
-<body>
-<!-- Header -->
+  </head>
+  <body>
+    <!-- Header -->
     <nav class="header">
-        <div class="logo">
-           <a href="/"><img class="logo-img" src="../../../imgs/apps.png" alt=""></a> 
-        </div>
-        <!-- Navigation -->
-        <ul class="navbar">
-            <li class="lead" id="app-btn">
-                <button class="nav-btn p" >MINI-APPS</button> 
-                <div class="dropdown">
-                <div class="drop-arrow"></div>
-                <div class="app-links p">
-                    <a href="../../apps/01_digital-timer/index.html" class="p">DIGITAL TIMER</a>
-                    <a href="./index.html" class="p">TO DO LIST</a>
-                    <a href="../../apps/03_agenda/index.html" class="p">AGENDA</a>
-                    <a href="../../apps/04_rock-paper-scissors/index.html" class="p">ROCK, PAPER, SCISSORS</a>
-                    <a href="../../apps/05_loop-game/index.html" class="p">RACE GAME</a>
-                    <a href="" class="p">DOG QUIZ (soon)</a>
-                    
-                </div>
-               </div>
-                
-            </li>
-            
-            <li class="lead"><button class="nav-btn p"><a href="../../../html/contact/index.html">CONTACT</a> </button> </li>
-            
-        </ul>
+      <div class="logo">
+        <a href="/"
+          ><img class="logo-img" src="../../../imgs/apps.png" alt=""
+        /></a>
+      </div>
+      <!-- Navigation -->
+      <ul class="navbar">
+        <li class="lead" id="app-btn">
+          <button class="nav-btn p">MINI-APPS</button>
+          <div class="dropdown">
+            <div class="drop-arrow"></div>
+            <div class="app-links p">
+              <a href="../../apps/01_digital-timer/index.html" class="p"
+                >DIGITAL TIMER</a
+              >
+              <a href="./index.html" class="p">TO DO LIST</a>
+              <a href="../../apps/03_agenda/index.html" class="p">AGENDA</a>
+              <a href="../../apps/04_rock-paper-scissors/index.html" class="p"
+                >ROCK, PAPER, SCISSORS</a
+              >
+              <a href="../../apps/05_loop-game/index.html" class="p"
+                >RACE GAME</a
+              >
+              <a href="" class="p">DOG QUIZ (soon)</a>
+            </div>
+          </div>
+        </li>
+
+        <li class="lead">
+          <button class="nav-btn p">
+            <a href="../../../html/contact/index.html">CONTACT</a>
+          </button>
+        </li>
+      </ul>
     </nav>
 
-<!-- Main body -->
+    <!-- Main body -->
     <main>
-        <div class="container-toDoList">
-            <div class="header-container">
-                <h1 class="x-large m">TO DO LIST</h1>
-                <div class="select-container">
-                    <select name="todos" class="filter-todo">
-                        <option value="all">All</option>
-                        <option value="completed">Completed</option>
-                        <option value="uncompleted">Uncompleted</option>
-                    </select>
-                </div>
-            </div>
-           
-                
-            <div class="todo-container">
-                <ul class="todo-list"></ul>
-            </div>
-            <form class="todo-form">
-                <div class="todo-inputForm">
-                    <input type="text" maxLength ="22" class="todo-input">
-                    <button class="todo-btn" type="submit">+</button>
-                </div>
-                <div class="error-container"></div>
-                <div class="saveTodos-info">*Todos are saved in local storage</div>
-            </form>
-            
+      <div class="container-toDoList">
+        <div class="header-container">
+          <h1 class="x-large m">TO DO LIST</h1>
+          <div class="select-container">
+            <select name="todos" class="filter-todo">
+              <option value="all">All</option>
+              <option value="completed">Completed</option>
+              <option value="uncompleted">Uncompleted</option>
+            </select>
+          </div>
         </div>
-        
+
+        <div class="todo-container">
+          <ul class="todo-list"></ul>
+        </div>
+        <form class="todo-form">
+          <div class="todo-inputForm">
+            <input type="text" maxlength="22" class="todo-input" />
+            <button class="todo-btn" type="submit">+</button>
+          </div>
+          <div class="error-container"></div>
+          <div class="saveTodos-info">*Todos are saved in local storage</div>
+        </form>
+      </div>
     </main>
     <!-- Footer -->
-    <footer class="p-1">
-        @ copywrite 2022 - Radu Padurariu
-    </footer>
-   
+    <footer class="p-1">@ copywrite 2022 - Radu Padurariu</footer>
+
     <script src="./main.js"></script>
-</body>
+  </body>
 </html>

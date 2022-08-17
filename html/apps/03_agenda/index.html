@@ -1,102 +1,154 @@
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <link rel="icon" href="../../../imgs/icons/agenda-book.png">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../../style.css">
-    <link rel="stylesheet" href="./style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="../../../imgs/icons/agenda-book.png" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="keywords"
+      content="java script, MINI-APPS, Radu Padurariu, SIIT, Contact Agenda"
+    />
+    <meta name="description" content="A contact agenda made with Java Script" />
+    <link rel="stylesheet" href="../../../style.css" />
+    <link rel="stylesheet" href="./style.css" />
     <title>AGENDA</title>
-</head>
-<body>
-<!-- Header -->
+  </head>
+  <body>
+    <!-- Header -->
     <nav class="header">
-        <div class="logo">
-           <a href="/"><img class="logo-img" src="../../../imgs/apps.png" alt=""></a> 
-        </div>
-        <!-- Navigation -->
-        <ul class="navbar">
-            <li class="lead" id="app-btn">
-                <button class="nav-btn p" >MINI-APPS</button> 
-                <div class="dropdown">
-                <div class="drop-arrow"></div>
-                <div class="app-links p">
-                    <a href="../../apps/01_digital-timer/index.html" class="p">DIGITAL TIMER</a>
-                    <a href="../../apps/02_todolist/index.html" class="p">TO DO LIST</a>
-                    <a href="./index.html" class="p">AGENDA</a>
-                    <a href="../../apps/04_rock-paper-scissors/index.html" class="p">ROCK, PAPER, SCISSORS</a>
-                    <a href="../../apps/05_loop-game/index.html" class="p">RACE GAME</a>
-                    <a href="" class="p">DOG QUIZ (soon)</a>
-                    
-                </div>
-               </div>
-                
-            </li>
-            
-            <li class="lead"><button class="nav-btn p"><a href="../../../html/contact/index.html">CONTACT</a> </button> </li>
-            
-        </ul>
+      <div class="logo">
+        <a href="/"
+          ><img class="logo-img" src="../../../imgs/apps.png" alt=""
+        /></a>
+      </div>
+      <!-- Navigation -->
+      <ul class="navbar">
+        <li class="lead" id="app-btn">
+          <button class="nav-btn p">MINI-APPS</button>
+          <div class="dropdown">
+            <div class="drop-arrow"></div>
+            <div class="app-links p">
+              <a href="../../apps/01_digital-timer/index.html" class="p"
+                >DIGITAL TIMER</a
+              >
+              <a href="../../apps/02_todolist/index.html" class="p"
+                >TO DO LIST</a
+              >
+              <a href="./index.html" class="p">AGENDA</a>
+              <a href="../../apps/04_rock-paper-scissors/index.html" class="p"
+                >ROCK, PAPER, SCISSORS</a
+              >
+              <a href="../../apps/05_loop-game/index.html" class="p"
+                >RACE GAME</a
+              >
+              <a href="" class="p">DOG QUIZ (soon)</a>
+            </div>
+          </div>
+        </li>
+
+        <li class="lead">
+          <button class="nav-btn p">
+            <a href="../../../html/contact/index.html">CONTACT</a>
+          </button>
+        </li>
+      </ul>
     </nav>
 
-<!-- Main body -->
+    <!-- Main body -->
     <main>
-        <div class="container-agenda">
-            <div class="header-container">
-                <h1 class="x-large m-3">AGENDA</h1>
-                
-                <div class="newContact-container" action="submit">
-                    <fieldset>
-                        <legend><span>New Contact </span> </legend>
-                        
-                        <div class="inputData-container">
-                            <div class="newUser-container">
-                                <div class="userData-container">
-                                    <label for="first_name">First name</label>
-                                    <label for="last_name">Last name</label>
-                                    <label for="phone">Phone</label>
-                                </div>
-                                <div class="userData-container">
-                                    <input class="first-name" id="first_name" type="text" maxLength= "20" placeholder="First name">
-                                    <input class="last-name" id="last_name" type="text" maxLength= "20" placeholder="Last name">
-                                    <input class="phone" id="phone" type="text" maxLength= "16" placeholder="Phone">
-                                </div>
-                            </div>
-                             
-                             <button id="saveContact" class="saveContact"><img width="40px" src="./imgs/save.png" alt=""></button>
-                             <div class="updateContact"></div>
-                             <!-- <button id="updateContact" class="updateContact"><img width="40px" src="./imgs/update.png" alt=""></button> -->
-                            <div class="newUser-container">
-                                <div class="userData-container">
-                                    <label for="email">Email</label>
-                                    <label for="city">City</label>
-                                    <label for="country">Country</label>
-                                </div>
-                                <div class="userData-container">
-                                    <input class="email" id="email" type="text" maxLength= "32" placeholder="Email">
-                                    <input class="city" id="city" type="text" maxLength= "24" placeholder="City">
-                                    <input class="country" id="country" type="text" maxLength= "20" placeholder="Country">
-                                </div>
-                            </div>
-                            
-                        </div>
-                        
-                    </fieldset>
-                    
-                </div>
-                
-            </div>
-               
-            <div class="contact-container"></div>
+      <div class="container-agenda">
+        <div class="header-container">
+          <h1 class="x-large m-3">AGENDA</h1>
 
-            <div class="saveLink">*Contacts are saved on my personal Fake Rest API: <a target="_blank" href="https://radupadurariuserver.herokuapp.com">radupadurariuserver.herokuapp.com</a> </div>
+          <div class="newContact-container" action="submit">
+            <fieldset>
+              <legend><span>New Contact </span></legend>
+
+              <div class="inputData-container">
+                <div class="newUser-container">
+                  <div class="userData-container">
+                    <label for="first_name">First name</label>
+                    <label for="last_name">Last name</label>
+                    <label for="phone">Phone</label>
+                  </div>
+                  <div class="userData-container">
+                    <input
+                      class="first-name"
+                      id="first_name"
+                      type="text"
+                      maxlength="20"
+                      placeholder="First name"
+                    />
+                    <input
+                      class="last-name"
+                      id="last_name"
+                      type="text"
+                      maxlength="20"
+                      placeholder="Last name"
+                    />
+                    <input
+                      class="phone"
+                      id="phone"
+                      type="text"
+                      maxlength="16"
+                      placeholder="Phone"
+                    />
+                  </div>
+                </div>
+
+                <button id="saveContact" class="saveContact">
+                  <img width="40px" src="./imgs/save.png" alt="" />
+                </button>
+                <div class="updateContact"></div>
+                <!-- <button id="updateContact" class="updateContact"><img width="40px" src="./imgs/update.png" alt=""></button> -->
+                <div class="newUser-container">
+                  <div class="userData-container">
+                    <label for="email">Email</label>
+                    <label for="city">City</label>
+                    <label for="country">Country</label>
+                  </div>
+                  <div class="userData-container">
+                    <input
+                      class="email"
+                      id="email"
+                      type="text"
+                      maxlength="32"
+                      placeholder="Email"
+                    />
+                    <input
+                      class="city"
+                      id="city"
+                      type="text"
+                      maxlength="24"
+                      placeholder="City"
+                    />
+                    <input
+                      class="country"
+                      id="country"
+                      type="text"
+                      maxlength="20"
+                      placeholder="Country"
+                    />
+                  </div>
+                </div>
+              </div>
+            </fieldset>
+          </div>
         </div>
-        
+
+        <div class="contact-container"></div>
+
+        <div class="saveLink">
+          *Contacts are saved on my personal Fake Rest API:
+          <a target="_blank" href="https://radupadurariuserver.herokuapp.com"
+            >radupadurariuserver.herokuapp.com</a
+          >
+        </div>
+      </div>
     </main>
     <!-- Footer -->
-    <footer class="p-1">
-        @ copywrite 2022 - Radu Padurariu
-    </footer>  
-    
+    <footer class="p-1">@ copywrite 2022 - Radu Padurariu</footer>
+
     <script src="./main.js"></script>
-</body>
+  </body>
 </html>
