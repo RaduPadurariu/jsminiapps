@@ -133,6 +133,7 @@ let contactElem = document.createElement('p');
             // edit button
             const editBtn = document.createElement('button');
             const editBtn_img = document.createElement('img');
+            editBtn.title = "Edit contact"
             editBtn_img.src = "./imgs/edit.png";
             editBtn_img.classList.add('imgBtn');
             editBtn.appendChild(editBtn_img);
@@ -148,6 +149,7 @@ let contactElem = document.createElement('p');
                 // Create update button
                 updateContactElem.innerText = "";
                 const updateBtn = document.createElement('button');
+                updateBtn.title = "Update contact"
                 updateBtn.classList.add('updateContactBtn')
                 const updateBtnImg = document.createElement('img');
                 updateBtnImg.style.width = "40px";
@@ -164,6 +166,7 @@ let contactElem = document.createElement('p');
         
             // delete button
             const deleteBtn = document.createElement('button');
+            deleteBtn.title = "Delete contact"
             const deleteBtn_img = document.createElement('img');
             deleteBtn_img.src = "./imgs/delete.png";
             deleteBtn_img.classList.add('imgBtn');
