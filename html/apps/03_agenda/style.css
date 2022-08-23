@@ -94,7 +94,7 @@ input {
 }
 
 .contact-container {
-    width: 100%;
+    width: 95%;
     overflow: auto;
     min-height:100px;
     height: 200px;
@@ -114,9 +114,6 @@ input {
     flex-wrap: wrap;
 }
 
-.newContact-container {
-    width:90%;
-}
 .newContact-subContainer {
     display: flex;
     flex-direction: column;
@@ -186,7 +183,6 @@ input {
     .inputData-container {
         display: flex;
         flex-direction: column;
-        max-width: 95%;
         align-items: center;
     }
    .saveContact {
