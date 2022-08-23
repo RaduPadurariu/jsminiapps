@@ -11,6 +11,12 @@
     box-shadow: 3px 3px 5px 2px #888888;
 }
 
+@media (max-width:800px) {
+    .container-rockPaperScissors {
+        max-width: 95%;
+    }
+}
+
 /* Game container */
 .game-container {
     display: flex;
@@ -163,6 +169,7 @@
     padding: 1rem;
     font-size: 2rem;
     border-radius: 10px;
+    width: 30%;
 }
 
 .btnChoices:hover {
@@ -231,3 +238,20 @@
 .hide {
     display:none;
 }
+
+@media (max-width:700px) {
+    .choicesImg {
+        margin:0.5rem;
+        max-width: 5rem;
+        width:3rem;
+    }
+    .text-choice {
+        font-size: 1.5rem;
+    }
+    .players {
+        font-size: 2rem;
+    }
+
+    .players-names {
+        margin: 0 1rem;
+    }

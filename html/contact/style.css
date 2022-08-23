@@ -1,3 +1,4 @@
+/* MAIN CONTAINER */
 .container-contact {
     display:flex;
     flex-direction: column;
@@ -12,9 +13,13 @@
     box-shadow: 3px 3px 5px 2px #888888;
 }
 
+@media (max-width:800px) {
+    .container-contact {
+        max-width: 95%;
+    }
+}
 
-
-
+/* Contact container */
 .contact-btn {
     color:black;
     background-color: lightgrey;

@@ -206,6 +206,7 @@ function createChoice (parent, value) {
     rockContainerElem.appendChild(rockImgElem);
     rockImgElem.src = "./imgs/"+ value + ".png";
     const rockTextElem = document.createElement('span');
+    rockTextElem.classList.add('text-choice');
     rockTextElem.innerText = value;
     rockContainerElem.appendChild(rockTextElem);
 }

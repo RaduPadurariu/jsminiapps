@@ -12,6 +12,12 @@
     box-shadow: 3px 3px 5px 2px #888888;
 }
 
+@media (max-width:800px) {
+    .container-agenda {
+        max-width: 95%;
+    }
+}
+
 /* Header container */
 .header-container {
     display: flex;
@@ -103,10 +109,14 @@ input {
     justify-content: space-between;
     align-items: center;
     margin-bottom: 1rem;
-    width: 80%;
+    width: 90%;
     margin: 0 auto 1.5rem auto;
+    flex-wrap: wrap;
 }
 
+.newContact-container {
+    width:90%;
+}
 .newContact-subContainer {
     display: flex;
     flex-direction: column;
@@ -161,9 +171,25 @@ input {
 .saveLink {
     font-style: italic;
     margin-bottom: 1rem;
+    text-align: center;
+    margin: 0.5rem 1rem;
 }
 
 .loading-spinner {
     align-self: center;
     width:5rem;
+}
+
+/* Media query */
+
+@media (max-width:750px) {
+    .inputData-container {
+        display: flex;
+        flex-direction: column;
+        max-width: 95%;
+        align-items: center;
+    }
+   .saveContact {
+    margin:0;
+   }
 }
