@@ -13,7 +13,7 @@ saveContactElem.addEventListener('click', saveNewContact);
 // setInterval(getContacts, 200);
 function getContacts () {
     displayLoader();
-    fetch('https://gentle-scrubland-92477.herokuapp.com/https://radupadurariuserver.herokuapp.com/agenda')
+    fetch('https://origin-cors-anywhere-radu.herokuapp.com/https://radupadurariuserver.herokuapp.com/agenda')
     .then(processResponse)
     .then(renderContacts);
 }
@@ -195,7 +195,7 @@ function saveNewContact (event) {
         country: document.getElementById('country').value
     }
 
-    fetch('https://gentle-scrubland-92477.herokuapp.com/https://radupadurariuserver.herokuapp.com/agenda', {
+    fetch('https://origin-cors-anywhere-radu.herokuapp.com/https://radupadurariuserver.herokuapp.com/agenda', {
         headers: {
             Accept: "application/json",
             "Content-Type": "application/json",
@@ -221,7 +221,7 @@ function clearFields () {
 // Edit and Delete
 
 function deleteContact (id) {
-    fetch('https://gentle-scrubland-92477.herokuapp.com/https://radupadurariuserver.herokuapp.com/agenda/' + id, {
+    fetch('https://origin-cors-anywhere-radu.herokuapp.com/https://radupadurariuserver.herokuapp.com/agenda/' + id, {
         method: "DELETE"
     })
     .then(getContacts)
@@ -240,7 +240,7 @@ function updateContacts (userData, buttonUpdate) {
     userData.city = document.getElementById('city').value;
     userData.country = document.getElementById('country').value;
 
-    fetch('https://gentle-scrubland-92477.herokuapp.com/https://radupadurariuserver.herokuapp.com/agenda/' + userData.id, {
+    fetch('https://origin-cors-anywhere-radu.herokuapp.com/https://radupadurariuserver.herokuapp.com/agenda/' + userData.id, {
   headers: {
     Accept: "application/json",
     "Content-Type": "application/json",
