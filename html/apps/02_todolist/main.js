@@ -25,9 +25,9 @@ function addTodo (event) {
 
 function deleteAndCheck (e) {
     const item = e.target;
+    const todo = item.parentElement.parentElement;
     // delete todo
     if(item.classList[0] === 'delete-btn') {
-        const todo = item.parentElement.parentElement;
         todo.classList.add('fall');
         removeLocalTodos(todo);
         setTimeout(function () {
@@ -38,18 +38,21 @@ function deleteAndCheck (e) {
 
     // check todo
     if(item.classList[0] === 'check-btn') {
-        const todo = item.parentElement.parentElement;
         todo.classList.toggle('completed');
+        checkLocalTodos(todo)
     }
 }
 
 // Render functions
 function createTodoHTML (todo) {
     const todoDiv = document.createElement('div');
+    if (todo.checked == true) {
+        todoDiv.classList.add('completed')
+    }
     todoDiv.classList.add('todo');
 
     const newTodo = document.createElement('li');
-    newTodo.innerText = todo;
+    newTodo.innerText = todo.name;
     newTodo.classList.add('todo-item');
     todoDiv.appendChild(newTodo);
 
@@ -116,21 +119,43 @@ function saveLocalTodos (todo) {
         todos = JSON.parse(localStorage.getItem("todos"));
     }
 
-    if (todos.includes(todo)) {
+    if (todos.some(el => el.name === todo)) {
         errorElem.innerText = "Todo already exists!";
         setTimeout(function () {
             errorElem.innerText = "";
             }, 1500)
-       
+        
         return;
     }
-        
-    todos.push(todo);
-    localStorage.setItem("todos", JSON.stringify(todos));
-    createTodoHTML(todo);
+    else {
+        todos.push({name: todo, checked: false});
+        localStorage.setItem("todos", JSON.stringify(todos));
+        getTodos()
+    } 
+    
 }
 
+function checkLocalTodos (todo) {
+    // is there a todos in local storage?
+    let todos;
+    if(localStorage.getItem('todos') === null) {
+        todos = [];
+    }
+    else {
+        todos = JSON.parse(localStorage.getItem("todos"));
+    }
+    const todoName = todo.children[0].innerText;
+    todos.forEach((el) => {
+        if (el.name === todoName) el.checked = !el.checked
+    })
+    console.log(todos)
+    localStorage.setItem("todos", JSON.stringify(todos));
+        getTodos()
+}
+
+
 function getTodos () {
+    todoList.innerText = ""
      // is there a todos in local storage?
     let todos;
     if(localStorage.getItem('todos') === null) {

@@ -25,15 +25,10 @@ let timer;
 
 
 // Functions
-function formatTime(value) {
-  if (value < 10) {
-    return "0" + value;
-  } else {
-    return value;
-  }
-}
+const formatTime = (value) => value < 10 ? "0" + value : value
 
-function timeLogic() {
+
+const timeLogic = () => {
   seconds++;
   if (seconds === 60) {
     minutes++;
@@ -46,7 +41,7 @@ function timeLogic() {
   }
 }
 
-function updateTimeHtml(seconds, minutes, hours) {
+const updateTimeHtml = (seconds, minutes, hours) => {
   secondsHTML.innerHTML = formatTime(seconds);
   minutesHTML.innerHTML = formatTime(minutes);
   hoursHTML.innerHTML = formatTime(hours);
