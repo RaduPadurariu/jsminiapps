@@ -2,22 +2,22 @@
 const todoInput = document.querySelector('.todo-input');
 const todoBtn = document.querySelector('.todo-btn');
 const todoList = document.querySelector('.todo-list');
-const filterOption = document.querySelector('.filter-todo');
+const filterOption = document.querySelector('#filter-todo');
 const errorElem = document.querySelector('.error-container');
 
 // Events
 document.addEventListener('DOMContentLoaded', getTodos);
 todoBtn.addEventListener('click', addTodo);
 todoList.addEventListener('click', deleteAndCheck);
-filterOption.addEventListener('click', filterTodo);
+filterOption.addEventListener('change', filterTodo);
 
 // Functions
 function addTodo (event) {
     event.preventDefault();
   
     // Add todo to local storage
-    if( todoInput.value !=="" && todoInput.value!== " ") {
-        saveLocalTodos(todoInput.value);
+    if( todoInput.value !=="" && !/(\ )/g.test(todoInput.value)) {
+        saveLocalTodos(todoInput.value.trim());
     }
     // clear values
     todoInput.value='';
