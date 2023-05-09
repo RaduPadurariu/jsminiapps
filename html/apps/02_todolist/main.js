@@ -4,6 +4,7 @@ const todoBtn = document.querySelector('.todo-btn');
 const todoList = document.querySelector('.todo-list');
 const filterOption = document.querySelector('#filter-todo');
 const errorElem = document.querySelector('.error-container');
+const todoContainerElem = document.getElementById('todo-container')
 
 // Events
 document.addEventListener('DOMContentLoaded', getTodos);
@@ -16,7 +17,7 @@ function addTodo (event) {
     event.preventDefault();
   
     // Add todo to local storage
-    if( todoInput.value !=="" && !/(\ )/g.test(todoInput.value)) {
+    if( todoInput.value.replace(/\ /g, "").length > 0) {
         saveLocalTodos(todoInput.value.trim());
     }
     // clear values
@@ -31,6 +32,7 @@ function deleteAndCheck (e) {
         todo.classList.add('fall');
         removeLocalTodos(todo);
         setTimeout(function () {
+        
         todo.remove();
         }, 500)
         

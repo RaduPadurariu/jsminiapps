@@ -49,6 +49,15 @@
     margin: 3rem 0 6rem 0;
     font-weight: bold;
 }
+.monthYear div {
+    margin: 0 1.5rem;
+}
 .monthYear span {
-    margin: 0 3rem;
+    margin: 0 0.3rem;
+}
+
+#day {
+    font-size: 1.5rem;
+    font-style: italic;
+    font-weight: 500;
 }
