@@ -8,7 +8,6 @@
     border-radius: 10px;
     width: 100%;
     max-width: 750px;
-    margin:1rem 0;
     text-align: center;
     box-shadow: 3px 3px 5px 2px #888888;
 }
@@ -49,3 +48,6 @@
     margin-top: 10rem;
 }
 
+.main-contact {
+    margin: auto 0;
+}

@@ -1,4 +1,8 @@
 /* MAIN CONTAINER */
+.main-contact {
+    margin: auto 0;
+}
+
 .container-agenda {
     display:flex;
     flex-direction: column;

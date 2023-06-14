@@ -1,4 +1,8 @@
 /* MAIN CONTAINER */
+.main-contact {
+    margin: auto 0;
+}
+
 .container-raceGame {
     display:flex;
     flex-direction: column;
@@ -94,3 +98,4 @@
 .replay-btn:hover {
     color: black;
 }
+
