@@ -180,6 +180,10 @@ main {
     /* overflow: auto; */
 }
 
+.main-container {
+    margin: auto 0;
+}
+
 a {
     text-decoration: none;
     color: black;
@@ -197,6 +201,11 @@ a {
     max-width: 950px;
     
 }
+
+h1 {
+    font-size: 4rem;
+}
+
 @media (max-width: 770px) {
     .header {
         padding: 0 10px;
@@ -334,3 +343,8 @@ h3 {
     font-size: 2rem;
 }
 
+@media (max-width: 500px) {
+    h1 {
+        font-size: 3rem;
+    }
+}

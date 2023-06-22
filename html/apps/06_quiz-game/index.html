@@ -1,18 +1,18 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" href="../../../imgs/icons/to-do-list.png" />
+    <link rel="icon" href="../../../imgs/icons/quiz-game.png" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="keywords"
-      content="java script, MINI-APPS, Radu Padurariu, SIIT, To Do list"
+      content="java script, MINI-APPS, Radu Padurariu, SIIT, Quiz Game"
     />
-    <meta name="description" content="A to do list made with Java Script" />
+    <meta name="description" content="A quiz game about dog breeds" />
     <meta name="author" content="Radu Padurariu" />
     <link rel="stylesheet" href="../../../style.css" />
     <link rel="stylesheet" href="./style.css" />
-    <title>TO DO LIST</title>
+    <title>QUIZ GAME - DOG BREEDS</title>
   </head>
   <body>
     <!-- Header -->
@@ -37,29 +37,20 @@
 
     <!-- Main body -->
     <main class="main-container">
-      <div class="container-toDoList">
-        <div class="header-container">
-          <h1 class="m text-center">TO DO LIST</h1>
-          <div class="select-container">
-            <select name="todos" id="filter-todo">
-              <option value="all" selected>All</option>
-              <option value="completed">Completed</option>
-              <option value="uncompleted">Uncompleted</option>
-            </select>
+      <div class="quizGame-container">
+        <div class="game-container">
+          <h1 class="m text-center">QUIZ GAME</h1>
+          <div class="imageDog-container"></div>
+          <div class="dogStats-container">
+            <div>Lives</div>
+            <button class="dogSkip-button">Skip (2)</button>
+            <div class="dogScore">
+              <div class="dogScore">Score:0pts</div>
+              <div class="dogScore" id="dogRecord">Record: 0 pts</div>
+            </div>
           </div>
+          <div class="dogQuestions-container"></div>
         </div>
-        <div class="todo-container" id="todo-container">
-          <ul class="todo-list"></ul>
-        </div>
-        <form class="todo-form">
-          <div class="todo-inputForm">
-            <input type="text" maxlength="22" class="todo-input" />
-            <button class="todo-btn" type="submit">+</button>
-          </div>
-        </form>
-
-        <div class="error-container"></div>
-        <div class="saveTodos-info">*Todos are saved in local storage</div>
       </div>
     </main>
     <!-- Footer -->
