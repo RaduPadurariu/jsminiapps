@@ -42,11 +42,27 @@
           <h1 class="m text-center">QUIZ GAME</h1>
           <div class="imageDog-container"></div>
           <div class="dogStats-container">
-            <div>Lives</div>
-            <button class="dogSkip-button">Skip (2)</button>
+            <div class="dogLivesContainer"></div>
+
+            <div class="dogButtonContainer">
+              <div class="dogSkip-button" id="dogSkipBtn">
+                <span>Skip &nbsp(&nbsp</span><span id="nrOfSkips">2</span>
+                <span>)</span>
+              </div>
+              <div class="dogNext-button" id="dogNextBtn">Next</div>
+            </div>
+
             <div class="dogScore">
-              <div class="dogScore">Score:0pts</div>
-              <div class="dogScore" id="dogRecord">Record: 0 pts</div>
+              <div class="flex">
+                <span>S<span class="text-toHide">core</span>: &nbsp</span>
+                <div class="dogScore" id="dogScore"></div>
+                <span> &nbsp pts</span>
+              </div>
+              <div class="flex">
+                <span>R<span class="text-toHide">ecord</span>: &nbsp</span>
+                <div class="dogScore" id="dogRecord"></div>
+                <span> &nbsp pts</span>
+              </div>
             </div>
           </div>
           <div class="dogQuestions-container"></div>
