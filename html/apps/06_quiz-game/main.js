@@ -1,3 +1,4 @@
+//Fetches
 //https://dog.ceo/api/breeds/list/all
 //https://dog.ceo/api/breeds/image/random
 

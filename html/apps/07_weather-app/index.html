@@ -1,0 +1,141 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="../../../imgs/icons/weather.png" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="keywords"
+      content="java script, MINI-APPS, Radu Padurariu, SIIT, Weather App"
+    />
+    <meta name="description" content="A weather app" />
+    <meta name="author" content="Radu Padurariu" />
+    <script
+      defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCMgTgNMW0dXxPzpzos9Cvm4lUJlWoGL44&libraries=places&callback=initMap"
+    ></script>
+    <script defer src="./main.js"></script>
+    <link rel="stylesheet" href="../../../style.css" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>WEATHER APP</title>
+  </head>
+  <body>
+    <!-- Header -->
+    <nav class="header">
+      <div class="logo">
+        <a href="../../../index.html"
+          ><img
+            class="logo-img"
+            src="../../../imgs/logo.png"
+            alt="logo-missing"
+        /></a>
+      </div>
+      <!-- Navigation -->
+      <ul class="navbar">
+        <li class="lead">
+          <button class="nav-btn p">
+            <a href="../../../html/contact/index.html">CONTACT</a>
+          </button>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Main body -->
+    <main class="main-container">
+      <div class="weatherApp-container">
+        <div class="weather-container">
+          <h1 class="m text-center">WEATHER APP</h1>
+
+          <div class="search-container">
+            <input
+              class="search-input"
+              type="text"
+              placeholder="Select location ..."
+            />
+            <div class="search-btn">
+              <i class="fas fa-search"></i>
+            </div>
+            <div class="cancel-btn">
+              <i class="fas fa-times"></i>
+            </div>
+          </div>
+          <div class="data-container">
+            <div class="temperature-container" id="temperature"></div>
+            <div class="clouds-container">
+              <div class="icon-container">PICTURE</div>
+              <div class="weatherType-container" id="weather-description">
+                Rainy
+              </div>
+            </div>
+          </div>
+          <div class="details-container">
+            <div class="details">
+              <div class="">Humidity</div>
+              <div class="stats">
+                <img
+                  src="./imgs/humidity (1).png"
+                  width="30rem"
+                  alt="missing humidity"
+                  class=""
+                />
+                <span class="" id="humidity"></span>
+              </div>
+            </div>
+            <div class="details">
+              <div class="">Pressure</div>
+              <div class="stats">
+                <img
+                  src="./imgs/pressure.png"
+                  width="30rem"
+                  alt="missing humidity"
+                  class=""
+                />
+                <span class="" id="pressure"></span>
+              </div>
+            </div>
+
+            <div class="details">
+              <div class="">Wind Speed</div>
+              <div class="stats">
+                <img
+                  src="./imgs/wind.png"
+                  alt="missing windspeed"
+                  class=""
+                  width="30rem"
+                />
+                <span class="" id="wind-speed"></span>
+              </div>
+            </div>
+            <div class="details">
+              <div class="">Precipitation</div>
+              <div class="stats">
+                <img
+                  src="./imgs/raining.png"
+                  alt="missing precipitation"
+                  width="30rem"
+                  class=""
+                />
+                <span class="" id="precipitation"></span>
+              </div>
+            </div>
+          </div>
+          <!-- <div>
+            <input
+              type="text"
+              style="
+                width: 100%;
+                height: 2rem;
+                border-radius: 10px;
+                padding: 0.3rem;
+                margin: 3rem 0;
+              "
+              placeholder="Falticeni, Suceava"
+            />
+          </div> -->
+        </div>
+      </div>
+    </main>
+    <!-- Footer -->
+    <footer class="p-1">&copy copywrite 2022 - Radu Padurariu</footer>
+  </body>
+</html>
