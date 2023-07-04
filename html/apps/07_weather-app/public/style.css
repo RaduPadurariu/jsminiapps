@@ -1,0 +1,144 @@
+
+
+/* Main container */
+.weatherApp-container {
+    display:flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background: #86e0c2;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 750px;
+    margin:1rem 0;
+    text-align: center;
+    box-shadow: 3px 3px 5px 2px #888888;
+   
+}
+
+@media (max-width:800px) {
+    .weatherApp-container {
+        max-width: 95%;
+    }
+}
+
+
+/* Search Container */
+
+.search-container {
+    height: 3rem;
+    width: 4rem;
+    margin: 0 auto;
+    position: relative;
+    transition: all 0.5s cubic-bezier(0.65, -0.55, 0.265, 1.55);
+}
+
+.search-container.activeSearch {
+    width: 350px;
+    max-width: 350px;
+}
+
+.search-container input {
+    height: 100%;
+    width: 100%;
+    font-size: 18px;
+    border: none;
+    border-radius: 50px;
+    padding: 0 60px 0 20px;
+    outline: none;
+    opacity: 0;
+}
+
+.search-btn {    
+    color: #a3e1e9;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #fff;
+    border-radius: 50px;
+    height: 2.5rem;
+    width: 2.5rem;
+    font-size: 20px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+
+.search-btn.activeSearch {
+    right: 5px;
+    height: 2.5rem;
+    width: 2.5rem;
+    color: #fff;
+    background-color: #a3e1e9;
+    line-height: 50px;
+}
+.cancel-btn {
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    transition: all 0.3s 0.1s cubic-bezier(0.65, -0.55, 0.265, 1.55);
+}
+
+.cancel-btn.activeSearch {
+    right: -30px;
+    transform: translateY(-50%);
+}
+
+.search-container input.activeSearch {
+    opacity: 1;
+
+}
+
+
+
+
+/* Data container */
+.data-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: #ffffff;
+    margin: 4rem auto;
+}
+
+.clouds-container {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Location */
+.location-container {
+    margin: 2rem auto;
+}
+
+
+/* details */
+
+.details-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    width: 100%;
+    color: #fff;
+    margin: 3rem auto 1rem;
+}
+
+.details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+}
+
+.stats {
+    display: flex;
+    align-items: center;
+   
+}
