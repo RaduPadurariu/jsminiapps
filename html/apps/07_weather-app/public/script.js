@@ -20,7 +20,7 @@ const precipitationElem = document.getElementById('precipitation');
 
 
 // Global Variables
-
+iconElem.src = "./../imgs/clear.png"
 
 // Functions
 
@@ -41,7 +41,7 @@ function initMap() {
           const lat = place.geometry.location.lat()
           const long = place.geometry.location.lng()
           
-          fetch('/weather', {
+          fetch('/html/apps/07_weather-app/weather', {
             headers: {
                 'Accept': "application/json",
                 "Content-Type": "application/json",  

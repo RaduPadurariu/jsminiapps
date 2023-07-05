@@ -1,0 +1,29 @@
+{
+  "name": "miniapps",
+  "version": "1.0.0",
+  "description": "This website contain mini apps created only with Java Script with the knowledge from the Web Development course. They are homeworks and workshops we study at the course. I improved and add something extra to each of them to cover everything I learned about HTML, CSS, Control Structures, Dom manipulation, Functions and Scopes, AJAX, OOP, ES 6, BOM, etc.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RaduPadurariu/miniapps.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RaduPadurariu/miniapps/issues"
+  },
+  "homepage": "https://github.com/RaduPadurariu/miniapps#readme",
+  "dependencies": {
+    "axios": "^1.4.0",
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "dotenv": "^16.3.1",
+    "nodemon": "^2.0.22"
+  }
+}
