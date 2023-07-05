@@ -5,15 +5,15 @@ const APY_KEY = process.env.APY_KEY
 const axios = require('axios')
 const express = require('express');
 const app = express();
-
+let bodyParser = require('body-parser')
 app.use(express.json())
 app.use(express.static('./'))
 
 app.use(bodyParser.json() );       // to support JSON-encoded bodies
-app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
+app.use(bodyParser.urlencoded({     
     extended: true
 }));
-const PORT = 4000;
+const port = process.env.PORT || 4000;
 
 app.post('/html/apps/07_weather-app/weather', (req, res) => {
     const url = `https://api.tomorrow.io/v4/timelines?location=${req.body.lat},${req.body.long}&fields=weatherCode&fields=temperature&fields=humidity&fields=windSpeed&fields=pressureSurfaceLevel&fields=precipitationProbability&timesteps=current&units=metric&apikey=${APY_KEY}`;
@@ -29,6 +29,6 @@ app.post('/html/apps/07_weather-app/weather', (req, res) => {
     f()
 })
 
-app.listen(PORT, () => {
+app.listen(port, () => {
     console.log('server started')
 })
