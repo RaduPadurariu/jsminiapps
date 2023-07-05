@@ -23,8 +23,7 @@ app.post('/html/apps/07_weather-app/weather', (req, res) => {
             url: url,
             responseType: 'json'
           }).then(response => response.data.data.timelines[0].intervals[0].values)
-
-        res.send(JSON.stringify(promise))
+        res.send(promise)
     }
     f()
 })
