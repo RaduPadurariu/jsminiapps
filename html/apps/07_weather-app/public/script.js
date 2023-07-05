@@ -4,6 +4,8 @@ const searchBtnElem = document.querySelector('.search-btn');
 const cancelBtnElem = document.querySelector('.cancel-btn');
 const searchInputElem = document.querySelector('.search-input');
 
+const cityElem = document.getElementById('weatherCity-container');
+const iconElem = document.getElementById('weatherIcon');
 const temperatureElem = document.getElementById('temperature');
 const weatherDescriptionElem = document.getElementById('weather-description');
 const humidityElem = document.getElementById('humidity');
@@ -50,26 +52,54 @@ function initMap() {
                 long: long
             })
           }).then(res => res.json()).then(data => {
-            console.log(data)
             setWeatherData(data, place.formatted_address)
           })
       })
 }
 
-
-
 const setWeatherData = (data, place) => {
     
         let weather = data
-        temperatureElem.textContent = `${weather.temperature} &degC`
-        weatherDescriptionElem.textContent = `${weather.weatherCode}`
-        humidityElem.textContent = `${weather.humidity} %`
-        pressureElem.textContent = `${weather.pressureSurfaceLevel * Math.pow(10, -3)} bar`
-        windSpeedElem.textContent = `${weather.windSpeed} m/s`
-        precipitationElem.textContent = `${weather.precipitationProbability} %`
+        cityElem.textContent = place;
+        temperatureElem.textContent = `${weather.temperature} °C`;
+        const w = weather.weatherCode
+        iconElem.src = `./../imgs/${+w >= 1100 && +w < 4000 ? "clouds.png" : +w >= 4000 && +w < 5100 ? "rain.png" : +w >= 5100 && +w < 5900 ? "snow.png" : +w >= 6000 && +w < 9000 ? "drizzle.png" : "clear.png"}`
+        
+        // Weather types
+        const typeOfWeather = {
+            "0": "Unknown",
+            "1000": "Clear, Sunny",
+            "1100": "Mostly Clear",
+            "1101": "Partly Cloudy",
+            "1102": "Mostly Cloudy",
+            "1001": "Cloudy",
+            "2000": "Fog",
+            "2100": "Light Fog",
+            "4000": "Drizzle",
+            "4001": "Rain",
+            "4200": "Light Rain",
+            "4201": "Heavy Rain",
+            "5000": "Snow",
+            "5001": "Flurries",
+            "5100": "Light Snow",
+            "5101": "Heavy Snow",
+            "6000": "Freezing Drizzle",
+            "6001": "Freezing Rain",
+            "6200": "Light Freezing Rain",
+            "6201": "Heavy Freezing Rain",
+            "7000": "Ice Pellets",
+            "7101": "Heavy Ice Pellets",
+            "7102": "Light Ice Pellets",
+            "8000": "Thunderstorm"
+        }[w] || "Unknown"
+
+        weatherDescriptionElem.textContent = `${typeOfWeather}`;
+
+        humidityElem.textContent = `${weather.humidity} %`;
+        pressureElem.textContent = `${+(weather.pressureSurfaceLevel * Math.pow(10, -3)).toFixed(2)} bar`;
+        windSpeedElem.textContent = `${weather.windSpeed} m/s`;
+        precipitationElem.textContent = `${weather.precipitationProbability} %`;
 }
-
-
 
 
 // Events

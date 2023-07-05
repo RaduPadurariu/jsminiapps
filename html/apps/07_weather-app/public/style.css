@@ -22,13 +22,15 @@
     }
 }
 
-
+.weather-container {
+    width: 90%;
+}
 /* Search Container */
 
 .search-container {
     height: 3rem;
     width: 4rem;
-    margin: 0 auto;
+    margin: 2rem auto 0;
     position: relative;
     transition: all 0.5s cubic-bezier(0.65, -0.55, 0.265, 1.55);
 }
@@ -98,19 +100,39 @@
 
 
 
-/* Data container */
+/* Data container (temperature, images)*/
 .data-container {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    color: #ffffff;
-    margin: 4rem auto;
+    margin: 1rem auto;
 }
 
 .clouds-container {
     display: flex;
     flex-direction: column;
 }
+
+.temperature-container {
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+#weatherIcon {
+    width: 6rem;
+}
+
+#weather-description {
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+#weatherCity-container {
+    font-size: 1.2rem;
+    font-style: italic;
+    margin: 2rem 0;
+}
+
 
 /* Location */
 .location-container {
@@ -122,23 +144,32 @@
 
 .details-container {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     flex-wrap: wrap;
     width: 100%;
-    color: #fff;
     margin: 3rem auto 1rem;
 }
 
 .details {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 150px;
+    flex-direction:column;
+    align-items:flex-start;
+    text-align: left;
+    margin-left: 1rem;
 }
 
 .stats {
     display: flex;
-    align-items: center;
-   
+    justify-content: flex-start;
+    margin: 0.5rem;
+}
+
+.paramType {
+    font-size: 1.2rem;
+    margin: 0.5rem 0 0.5rem 0;
+    text-align: left;
+}
+
+.paramValue {
+    margin-left: 1rem;
 }

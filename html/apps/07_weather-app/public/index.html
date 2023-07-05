@@ -11,7 +11,7 @@
     <meta name="description" content="A weather app" />
     <meta name="author" content="Radu Padurariu" />
 
-    <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="./../../../../style.css" />
     <link rel="stylesheet" href="./style.css" />
     <title>WEATHER APP</title>
   </head>
@@ -40,7 +40,7 @@
     <main class="main-container">
       <div class="weatherApp-container">
         <div class="weather-container">
-          <h1 class="m text-center">WEATHER APP</h1>
+          <h1 class="my-2 text-center">WEATHER APP</h1>
           <div
             id="map"
             style="
@@ -65,17 +65,20 @@
             </div>
           </div>
           <div class="data-container">
-            <div class="temperature-container" id="temperature"></div>
+            <div class="temperature-container" id="temperature">Tbd</div>
             <div class="clouds-container">
-              <div class="icon-container">PICTURE</div>
-              <div class="weatherType-container" id="weather-description">
-                Rainy
+              <div class="weatherIcon-container">
+                <img id="weatherIcon" alt="missing-icon" />
               </div>
+              <div class="weatherType-container" id="weather-description"></div>
             </div>
+          </div>
+          <div class="weatherCity-container" id="weatherCity-container">
+            Unknown City
           </div>
           <div class="details-container">
             <div class="details">
-              <div class="">Humidity</div>
+              <div class="paramType">Humidity</div>
               <div class="stats">
                 <img
                   src="./../imgs/humidity (1).png"
@@ -83,11 +86,11 @@
                   alt="missing humidity"
                   class=""
                 />
-                <span class="" id="humidity"></span>
+                <span class="paramValue" id="humidity">Tbd</span>
               </div>
             </div>
             <div class="details">
-              <div class="">Pressure</div>
+              <div class="paramType">Pressure</div>
               <div class="stats">
                 <img
                   src="./../imgs/pressure.png"
@@ -95,12 +98,12 @@
                   alt="missing humidity"
                   class=""
                 />
-                <span class="" id="pressure"></span>
+                <span class="paramValue" id="pressure">Tbd</span>
               </div>
             </div>
 
             <div class="details">
-              <div class="">Wind Speed</div>
+              <div class="paramType">Wind Speed</div>
               <div class="stats">
                 <img
                   src="./../imgs/wind.png"
@@ -108,11 +111,11 @@
                   class=""
                   width="30rem"
                 />
-                <span class="" id="wind-speed"></span>
+                <span class="paramValue" id="wind-speed">Tbd</span>
               </div>
             </div>
             <div class="details">
-              <div class="">Precipitation</div>
+              <div class="paramType">Precipitation</div>
               <div class="stats">
                 <img
                   src="./../imgs/raining.png"
@@ -120,7 +123,7 @@
                   width="30rem"
                   class=""
                 />
-                <span class="" id="precipitation"></span>
+                <span class="paramValue" id="precipitation">Tbd</span>
               </div>
             </div>
           </div>
