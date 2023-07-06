@@ -7,7 +7,7 @@ const express = require('express');
 const app = express();
 let bodyParser = require('body-parser');
 app.use(express.json());
-app.use(express.static('./html/apps/07_weather-app/public'));
+app.use(express.static('./html/apps/07_weather-app/public/'));
 
 app.use(bodyParser.json() );      
 app.use(bodyParser.urlencoded({     
@@ -23,7 +23,7 @@ app.post('/html/apps/07_weather-app/public/weather', (req, res) => {
             url: url,
             responseType: 'json'
           }).then(response => response.data.data.timelines[0].intervals[0].values)
-        res.send(promise);
+        res.send(JSON.stringify(promise));
     }
     f();
 });
