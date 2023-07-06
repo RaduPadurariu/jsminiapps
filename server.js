@@ -7,7 +7,7 @@ const express = require('express');
 const app = express();
 let bodyParser = require('body-parser')
 app.use(express.json())
-app.use(express.static('./'))
+app.use(express.static('./html/apps/07_weather-app/public'))
 
 app.use(bodyParser.json() );       // to support JSON-encoded bodies
 app.use(bodyParser.urlencoded({     
