@@ -41,7 +41,7 @@ function initMap() {
           const lat = place.geometry.location.lat()
           const long = place.geometry.location.lng()
           
-          fetch('/html/apps/07_weather-app/weather', {
+          fetch('/html/apps/07_weather-app/public/weather', {
             headers: {
                 'Accept': "application/json",
                 "Content-Type": "application/json",  
