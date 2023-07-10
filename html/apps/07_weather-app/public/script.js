@@ -61,7 +61,7 @@ const setWeatherData = (data, place) => {
     
         let weather = data
         cityElem.textContent = place;
-        temperatureElem.textContent = `${weather.temperature} °C`;
+        temperatureElem.textContent = `${+weather.temperature.toFixed(1)} °C`;
         const w = weather.weatherCode
         iconElem.src = `./../imgs/${+w >= 1100 && +w < 4000 ? "clouds.png" : +w >= 4000 && +w < 5100 ? "rain.png" : +w >= 5100 && +w < 5900 ? "snow.png" : +w >= 6000 && +w < 9000 ? "drizzle.png" : "clear.png"}`
         

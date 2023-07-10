@@ -173,3 +173,9 @@
 .paramValue {
     margin-left: 1rem;
 }
+
+@media (max-width:500px) {
+    .search-container.activeSearch {
+        max-width: 200px;
+    }
+}
