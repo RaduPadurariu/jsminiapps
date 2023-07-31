@@ -1,10 +1,14 @@
 // Selectors
 const contactContainer = document.querySelector('.contact-container');
 const updateContactElem = document.querySelector('.updateContact');
-const saveContactElem = document.querySelector('.saveContact');
+const saveContactElem = document.querySelector('.newContact-container');
+const saveContactElem2 = document.getElementById('newContact-container');
 
 // Events
-saveContactElem.addEventListener('click', saveNewContact);
+saveContactElem.addEventListener('submit', saveNewContact);
+
+
+
 
 // Functions
 
@@ -156,7 +160,7 @@ let contactElem = document.createElement('p');
                 updateBtnImg.src = "./imgs/update.png";
                 updateBtn.appendChild(updateBtnImg);
                 updateContactElem.appendChild(updateBtn);
-                
+               
                 // Update contacts
                 updateBtn.addEventListener('click', function () {
                     updateContacts(element, updateBtn);

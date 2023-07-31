@@ -53,7 +53,7 @@ function createTodoHTML (todo) {
     }
     todoDiv.classList.add('todo');
 
-    const newTodo = document.createElement('li');
+    const newTodo = document.createElement('div');
     newTodo.innerText = todo.name;
     newTodo.classList.add('todo-item');
     todoDiv.appendChild(newTodo);
@@ -85,7 +85,6 @@ function createTodoHTML (todo) {
 
 function filterTodo (e) {
     const todos = todoList.childNodes;
-    console.log(todos);
     todos.forEach(function (todo) {
         switch(e.target.value) {
             case "all":
@@ -150,7 +149,6 @@ function checkLocalTodos (todo) {
     todos.forEach((el) => {
         if (el.name === todoName) el.checked = !el.checked
     })
-    console.log(todos)
     localStorage.setItem("todos", JSON.stringify(todos));
         getTodos()
 }

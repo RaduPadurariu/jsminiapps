@@ -1,4 +1,4 @@
-<html lang="en">
+<!DOCTYPE html lang="en">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" href="../../../imgs/icons/agenda-book.png" />
@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="keywords"
-      content="java script, MINI-APPS, Radu Padurariu, SIIT, Contact Agenda"
+      content="java script, MINI-APPS, Radu Padurariu, SIIT, Phone Book"
     />
-    <meta name="description" content="A contact agenda made with Java Script" />
+    <meta name="description" content="A phone book made with Java Script" />
     <meta name="author" content="Radu Padurariu" />
     <link rel="stylesheet" href="../../../style.css" />
     <link rel="stylesheet" href="./style.css" />
@@ -28,9 +28,9 @@
       <!-- Navigation -->
       <ul class="navbar">
         <li class="lead">
-          <button class="nav-btn p">
+          <div class="nav-btn p">
             <a href="../../../html/contact/index.html">CONTACT</a>
-          </button>
+          </div>
         </li>
       </ul>
     </nav>
@@ -40,8 +40,12 @@
       <div class="container-agenda">
         <div class="header-container">
           <h1 class="m-3 text-center">PHONE BOOK</h1>
-
-          <div class="newContact-container" action="submit">
+          <form
+            class="newContact-container"
+            action="https://radupadurariuserver.herokuapp.com/agenda"
+            method="POST"
+            id="newContact-container"
+          >
             <fieldset>
               <legend><span>New Contact </span></legend>
 
@@ -59,6 +63,8 @@
                       type="text"
                       maxlength="20"
                       placeholder="First name"
+                      required
+                      name="first_name"
                     />
                     <input
                       class="last-name"
@@ -66,23 +72,26 @@
                       type="text"
                       maxlength="20"
                       placeholder="Last name"
+                      required
+                      name="last_name"
                     />
                     <input
                       class="phone"
                       id="phone"
-                      type="text"
-                      maxlength="16"
+                      type="tel"
                       placeholder="Phone"
+                      name="phone"
                     />
                   </div>
                 </div>
 
                 <button
+                  type="submit"
                   title="Save contact"
                   id="saveContact"
                   class="saveContact"
                 >
-                  <img width="40px" src="./imgs/save.png" alt="" />
+                  <img width="40" src="./imgs/save.png" alt="" />
                 </button>
                 <div class="updateContact"></div>
                 <!-- <button id="updateContact" class="updateContact"><img width="40px" src="./imgs/update.png" alt=""></button> -->
@@ -96,9 +105,10 @@
                     <input
                       class="email"
                       id="email"
-                      type="text"
+                      type="email"
                       maxlength="32"
                       placeholder="Email"
+                      name="email"
                     />
                     <input
                       class="city"
@@ -106,6 +116,7 @@
                       type="text"
                       maxlength="24"
                       placeholder="City"
+                      name="city"
                     />
                     <input
                       class="country"
@@ -113,12 +124,13 @@
                       type="text"
                       maxlength="20"
                       placeholder="Country"
+                      name="country"
                     />
                   </div>
                 </div>
               </div>
             </fieldset>
-          </div>
+          </form>
         </div>
 
         <div class="contact-container"></div>
@@ -132,7 +144,7 @@
       </div>
     </main>
     <!-- Footer -->
-    <footer class="p-1">&copy copywrite 2022 - Radu Padurariu</footer>
+    <footer class="p-1">&copy; copywrite 2022 - Radu Padurariu</footer>
 
     <script src="./main.js"></script>
   </body>
