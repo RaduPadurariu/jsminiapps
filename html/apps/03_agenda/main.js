@@ -2,19 +2,15 @@
 const contactContainer = document.querySelector('.contact-container');
 const updateContactElem = document.querySelector('.updateContact');
 const saveContactElem = document.querySelector('.newContact-container');
-const saveContactElem2 = document.getElementById('newContact-container');
 
 // Events
 saveContactElem.addEventListener('submit', saveNewContact);
 
-
+//Global variables
+let editFlag = true;  
 
 
 // Functions
-
-// Get Contacts
-
-// setInterval(getContacts, 200);
 function getContacts () {
     displayLoader();
     fetch('https://origin-cors-anywhere-radu.herokuapp.com/https://radupadurariuserver.herokuapp.com/agenda')
@@ -29,9 +25,10 @@ function processResponse(response) {
 // Render Contacts
 function renderContacts (data) {
     contactContainer.innerText = ""; 
-    for (const user of data) {
+    for (let user of data) {
         renderContactHTML(user);
     }
+    
     };
 
 getContacts();
@@ -40,6 +37,7 @@ getContacts();
 // Render contact HTML
 function renderContactHTML (element) {
 let contactElem = document.createElement('p');
+
         contactContainer.appendChild(contactElem);
         contactElem.classList.add ('new-contact');
 
@@ -129,7 +127,7 @@ let contactElem = document.createElement('p');
                         userContactAddressElem.appendChild(userContactAddressTextElem);
                         userContactAddressTextElem.innerText = element.city + ", " + element.country;
 
-
+            // Buttons container
             const btnContainer = document.createElement('div');
             btnContainer.classList.add('btn-container')
             contactElem.appendChild(btnContainer);
@@ -142,30 +140,55 @@ let contactElem = document.createElement('p');
             editBtn_img.classList.add('imgBtn');
             editBtn.appendChild(editBtn_img);
             editBtn.classList.add('edit-btn');
-            btnContainer.appendChild(editBtn);
-
-            editBtn.addEventListener('click', function () {
-                document.getElementById('saveContact').style.display = "none";
-                updateContactElem.style.display = "flex";
-
-                completeFields (element);
-                editBtn.disabled = true;
-                // Create update button
-                updateContactElem.innerText = "";
-                const updateBtn = document.createElement('button');
-                updateBtn.title = "Update contact"
-                updateBtn.classList.add('updateContactBtn')
-                const updateBtnImg = document.createElement('img');
-                updateBtnImg.style.width = "40px";
-                updateBtnImg.src = "./imgs/update.png";
-                updateBtn.appendChild(updateBtnImg);
-                updateContactElem.appendChild(updateBtn);
+            btnContainer.appendChild(editBtn);   
                
-                // Update contacts
-                updateBtn.addEventListener('click', function () {
-                    updateContacts(element, updateBtn);
-                    editBtn.disabled = false;
-                })
+            editBtn.addEventListener('click', function () {
+                if (editFlag) {
+                    document.getElementById('saveContact').style.display = "none";
+                    updateContactElem.style.display = "flex";
+                    completeFields (element);
+                    // Create update button
+                    updateContactElem.innerText = "";
+                    const updateBtn = document.createElement('button');
+                    updateBtn.title = "Update contact"
+                    updateBtn.classList.add('updateContactBtn')
+                    const updateBtnImg = document.createElement('img');
+                    updateBtnImg.style.width = "40px";
+                    updateBtnImg.src = "./imgs/update.png";
+                    updateBtn.appendChild(updateBtnImg);
+                    updateContactElem.appendChild(updateBtn);
+                    editFlag = false
+                    // editBtn.disabled = true;
+                    // Update contacts
+                    updateBtn.addEventListener('click', function () {
+                        updateContacts(element, updateBtn);
+                        updateContactElem.style.display = "none";
+                        updateContactElem.innerText = "";
+                        editFlag = true
+                        // editBtn.disabled = false;
+                    })
+
+                    // reset data when update
+                    const resetData = document.createElement('button');
+                    resetData.title = "Reset contact data"
+                    resetData.classList.add('updateContactBtn');
+                    const resetDataImg = document.createElement('img');
+                    resetDataImg.style.width = "20px";
+                    resetDataImg.src = "./imgs/cancel.png";
+                    resetData.appendChild(resetDataImg);
+                    updateContactElem.appendChild(resetData);
+                    
+                    resetData.addEventListener('click', function () {
+                        clearFields()
+                        document.getElementById('saveContact').style.display = "flex";
+                        updateContactElem.style.display = "none";
+                        updateContactElem.innerText = "";
+                        editFlag = true
+                        // editBtn.disabled = false;
+                        })
+                }
+                    
+                
             })
         
             // delete button

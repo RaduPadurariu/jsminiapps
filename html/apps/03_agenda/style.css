@@ -84,12 +84,15 @@ input {
     background-color: #ebf3a7;
     font-size: 1rem;
     font-weight:bold;
-    margin: 1rem;
+    margin: 0.3rem;
     cursor: pointer;
 }
 
 .updateContact {
     display:none;
+    flex-direction: column;
+    justify-content: center;
+   
 }
 
 .contact-container {
