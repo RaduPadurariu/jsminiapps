@@ -52,7 +52,7 @@ const saveDogRecord = (value) => {
     localStorage.setItem("dogRecord", JSON.stringify(localDogRecord));
     
 }
-getDogRecord()
+
 
 // Render Lives
 for (let i = 0; i < 3; i++) {
@@ -142,8 +142,6 @@ function createQuestions (value) {
 
 
 
-getRandomDog()
-
 
 const dogSkip = () => {
     let nrOfSkips = numberOfSkipsElem.innerText;
@@ -183,6 +181,8 @@ const playAgainBtn = () => {
 dogSkipButtonElem.addEventListener('click', dogSkip)
 dogNextButtonElem.addEventListener("click", dogNext)
 
+getDogRecord()
+getRandomDog()
 
 
 

@@ -20,7 +20,7 @@ const precipitationElem = document.getElementById('precipitation');
 
 
 // Global Variables
-iconElem.src = "./../imgs/clear.png"
+
 
 // Functions
 
