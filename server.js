@@ -1,9 +1,12 @@
 if (process.env.NODE_ENV !== "production")  {
     require('dotenv').config()
 };
-const APY_KEY = process.env.APY_KEY;
 const axios = require('axios');
 const express = require('express');
+
+
+const APY_KEY = process.env.APY_KEY;
+
 const app = express();
 let bodyParser = require('body-parser');
 app.use(express.json());
