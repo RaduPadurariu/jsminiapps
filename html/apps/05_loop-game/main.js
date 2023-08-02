@@ -19,7 +19,7 @@ class CarObject {
 
     generateRef() {
         this.ref = document.createElement('img');
-        this.ref.style.width = this.width;
+        this.ref.style.width = this.width + "px";
         this.ref.style.position = "absolute";
         gameSceneElem.appendChild(this.ref);
         this.ref.style.top = 0;
@@ -100,11 +100,14 @@ class CarsFactory {
     }
 }
 
+
+// Lives Factory
+
 class Lives {
   constructor () {
       this.width = 30;
       this.height = 30;
-      this.id = 0;
+      this.id = -1;
       this.renderLives();
   }
 
@@ -124,14 +127,52 @@ class Lives {
 }
 
 
+class LivesFactory {
+  constructor() {
+    this.livesArr = [];
+  }
+
+  createLives() {
+      const live = new Lives();
+      live.id = livesId;
+      this.livesArr.push(live);  
+  }
+
+  destroyLive() {
+    // using filter to an array we always update the remaining lives.
+    this.livesArr = this.livesArr.filter((live) => {
+
+        if (live.id == this.livesArr.length-1){
+          live.removeLives();
+          return false;
+        }
+      return true;
+    });
+
+  }
+
+}
+
+
+// Create Objects from classes
+
 const player = new Player();
 const contraCarsFactory = new CarsFactory();
 const carsFactory = new CarsFactory();
+const livesCount = new LivesFactory();
 
+//Global variables
 let keyUpPress = false;
 let keyDownPress = false;
 let count = 0;
 let livesId = 0;
+
+
+// create three lives.
+for (let index = 0; index < 3; index++) {
+  livesCount.createLives();
+  livesId++;  
+}
 
 // Events
 
@@ -170,12 +211,9 @@ let gameLoop = setInterval(() => {
     
     // if the player collide with any of the obstacles we need to close the game loops, alert the user and refresh the game
     if (collisionDetection(player, contraCarsFactory.cars)) {
-      console.log('COLLIDE');
-      
       destroyLives(player.y);
     }
     if (collisionDetection(player, carsFactory.cars)) {
-      console.log('COLLIDE acars');
       destroyLives(player.y);
     }
 
@@ -198,7 +236,6 @@ function collisionDetection(player, cars) {
         player.y < car.y + car.height &&
         player.height + player.y > car.y)
     ) {
-      console.log('test collision');
       car.collideFlag = 'yes';
       return true;
     }
@@ -211,13 +248,13 @@ function collisionDetection(player, cars) {
 
 
 function destroyLives (player) {
-  livesCount.destroyLives();
+  livesCount.destroyLive();
 
   const smoke = document.createElement('img');
       smoke.src = "./imgs/explosion.png";
       smoke.classList.add ('smoke');
-      smoke.style.top = player;
-      smoke.style.left = 110;
+      smoke.style.top = player + "px";
+      smoke.style.left = 110 + "px";
       gameSceneElem.appendChild(smoke);
       setTimeout (function () {
         smoke.remove();
@@ -232,42 +269,7 @@ function destroyLives (player) {
 }
 
 
-
-// Lives Factory
-class LivesFactory {
-    constructor() {
-      this.livesArr = [];
-    }
-  
-    createLives() {
-        const live = new Lives();
-        live.id = livesId;
-        this.livesArr.push(live);  
-    }
-  
-    destroyLives() {
-      // using filter to an array we always update the remaining lives.
-      this.livesArr = this.livesArr.filter((live) => {
-
-          if (live.id == this.livesArr.length-1){
-            live.removeLives();
-            return false;
-          }
-        return true;
-      });
- 
-    }
-  
-  }
-
-const livesCount = new LivesFactory();
-
-// create three lives.
-for (let index = 0; index < 3; index++) {
-  livesCount.createLives();
-  livesId++;  
-}
-
+// Play again button
 function playAgainBtn () {
   const btnPlayAgainElem = document.createElement('button');
   btnPlayAgainElem.addEventListener ('click', function () {
