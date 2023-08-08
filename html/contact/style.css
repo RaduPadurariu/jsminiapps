@@ -19,12 +19,19 @@
 }
 
 /* Contact container */
+
+
+@font-face {
+    font-family: 'voyager';
+    src: url('./font/Voyager_Light.otf');
+}
+
 .contact-btn {
     color:black;
     background-color: lightgrey;
     font-size: 20px;
     font-weight: bold;
-    font-family: voyager;
+    font-family: 'voyager';
     border:2px solid #4ccaf0;
     padding:10px;
     border-radius: 8px;
