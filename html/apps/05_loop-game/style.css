@@ -10,6 +10,7 @@
     max-width: 750px;
     margin:1rem 0;
     box-shadow: 3px 3px 5px 2px #888888;
+    
 }
 
 @media (max-width:800px) {
@@ -23,7 +24,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 3rem;
+    margin-top: 1.5rem;
 }
 
 .header-logo {
@@ -37,14 +38,14 @@
     background-repeat: repeat;
     height: 3rem;
     width: 100%;
-    margin-top: 2rem;
+    margin-top: 1rem;
 }
 
 
 /* Game container */
 .game-container {
     width:100%;
-    height: 25rem;
+    height: 17rem;
     background-image: url("./imgs/highway.png");
     background-position: center;
     margin-bottom: 2rem;
@@ -73,14 +74,17 @@
 }
 
 .lives-container {
-    margin-top: 1rem;
+    margin: 1rem;
     font-weight: bold;
     color: darkred;
-    font-size: 3rem;
-    height: 3rem;
-    margin-bottom: 1rem;
+    font-size: 1.5rem;
 }
 
+.livesReplayContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 .replay-btn {
     font-size: 1rem;
     color:rgb(140, 140, 150);
@@ -89,7 +93,6 @@
     padding: 0.5rem;
     border-radius: 5px;
     background-color: #ecb3e3;
-    height: 2rem;
 }
 
 .replay-btn:hover {

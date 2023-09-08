@@ -9,8 +9,8 @@ const replayBtnElem = document.querySelector('.replay-btn');
 // Cars
 class CarObject {
     constructor () {
-        this.width = 100;
-        this.height = 50;
+        this.width = 80;
+        this.height = 40;
 
         this.x = 0;
         this.y = 0;
@@ -42,15 +42,15 @@ class Player extends CarObject {
     constructor () {
         super();
         this.ref.src = "./imgs/sport-car.png";
-        this.move (50, 250)
+        this.move (50, 180)
     }
 
     moveUp() {
-        if (this.y >= 60) this.move (this.x, this.y - 15);
+        if (this.y >= 10) this.move (this.x, this.y - 15);
     }
 
     moveDown () {
-        if (this.y <= 300) this.move (this.x, this.y + 15);
+        if (this.y <= 225) this.move (this.x, this.y + 15);
     }
 
 }
@@ -203,8 +203,8 @@ let gameLoop = setInterval(() => {
     if (keyUpPress) player.moveUp();
     if (keyDownPress) player.moveDown();
     
-    if (count % 30 === 0) contraCarsFactory.createCar(800, 50 + Math.floor(Math.random() * 100), 'contraCars');
-    if (count % 30 === 0) carsFactory.createCar(800, 220 + Math.floor(Math.random() * 70), 'cars');
+    if (count % 30 === 0) contraCarsFactory.createCar(800, 0 + Math.floor(Math.random() * 70), 'contraCars');
+    if (count % 30 === 0) carsFactory.createCar(800, 120 + Math.floor(Math.random() * 105), 'cars');
     
     contraCarsFactory.moveCars(40);
     carsFactory.moveCars(10);

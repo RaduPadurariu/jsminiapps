@@ -168,6 +168,7 @@ body {
     /* background-image: url("./imgs/background.png");
     background-position: center;
     background-size: cover; */
+    overflow: scroll;
 }
 
 main {
@@ -203,7 +204,7 @@ a {
 }
 
 h1 {
-    font-size: 4rem;
+    font-size: 3rem;
 }
 
 @media (max-width: 770px) {

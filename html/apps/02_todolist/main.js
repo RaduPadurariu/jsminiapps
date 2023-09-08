@@ -129,7 +129,7 @@ function saveLocalTodos (todo) {
         return;
     }
     else {
-        todos.push({name: todo, checked: false});
+        todos.unshift({name: todo, checked: false});
         localStorage.setItem("todos", JSON.stringify(todos));
         getTodos()
     } 
