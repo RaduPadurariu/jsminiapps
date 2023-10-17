@@ -19,6 +19,9 @@
     }
 }
 
+body {
+    height: 95vh;
+}
 /* Game Header */
 .header-container {
     display: flex;
