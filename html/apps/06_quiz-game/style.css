@@ -132,6 +132,7 @@
     font-size: 1.2rem;
     min-width: 250px;
     margin: 0.5rem;
+    color: black;
 }
 
 @media (max-width:600px) {

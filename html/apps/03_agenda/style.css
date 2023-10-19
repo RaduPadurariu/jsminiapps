@@ -123,6 +123,12 @@ input {
     margin-right: 1rem;
 }
 
+.main-dataContainer {
+    display: flex;
+    justify-content: space-between;
+    flex: 6;
+}
+
 .contact-icons {
     width:25px;
     margin: 0.5rem;
@@ -187,7 +193,25 @@ input {
         flex-direction: column;
         align-items: center;
     }
+
    .saveContact {
     margin:0;
    }
+
+   .updateContact {
+    flex-direction: row;
+   }
+
+   .newUser-container {
+    margin: 0.5rem 0;
+   }
+}
+
+@media (max-width:600px) {
+    .main-dataContainer {
+        flex-direction: column;
+    }
+    .new-contact {
+        align-items: flex-end;
+    }
 }

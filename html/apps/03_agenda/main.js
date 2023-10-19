@@ -40,11 +40,16 @@ let contactElem = document.createElement('p');
 
         contactContainer.appendChild(contactElem);
         contactElem.classList.add ('new-contact');
+         
+        // container for both names and email/location
 
+        let userDataContainerElem = document.createElement('div');
+        userDataContainerElem.classList.add('main-dataContainer')
+        contactElem.appendChild(userDataContainerElem);
             // container for name and phone
             let userDataElem = document.createElement('div');
             userDataElem.classList.add('newContact-subContainer');
-            contactElem.appendChild(userDataElem);
+            userDataContainerElem.appendChild(userDataElem);
            
 
                 // container for icon and name
@@ -84,7 +89,7 @@ let contactElem = document.createElement('p');
             // container for email and address
             let userContactElem = document.createElement('div');
             userContactElem.classList.add('newContact-subContainer');
-            contactElem.appendChild(userContactElem);
+            userDataContainerElem.appendChild(userContactElem);
         
 
                 // container for email

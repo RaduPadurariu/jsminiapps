@@ -327,6 +327,7 @@ section {
     text-align: center;
     margin:30px 20px;
     box-shadow: 3px 3px 5px 2px #888888;
+    padding: 0 4px;
 }
 
 .app-container:hover {

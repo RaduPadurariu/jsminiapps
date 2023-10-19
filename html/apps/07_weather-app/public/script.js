@@ -116,6 +116,7 @@ cancelBtnElem.addEventListener('click', () => {
     searchInputElem.classList.remove('activeSearch');
     searchBtnElem.classList.remove('activeSearch');
     cancelBtnElem.classList.remove('activeSearch');
+
 })
 
 

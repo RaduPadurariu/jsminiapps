@@ -160,7 +160,13 @@ function createChooseOptions(players, choices) {
         let playerChoice = "Rock";
         choices.push(playerChoice);
         if (choices.length === 2) {
-            createShakingAnimation (optionsMainContainerElem, choices, players);
+            if(singleModeFlag) {
+                createShakingAnimation (optionsMainContainerElem, choices, players);          
+            }
+            else {
+                createShakingAnimation (optionsMainContainerElem, choices.reverse(), players);  
+            }
+            
         }  
         chooseTextElem.innerText = players[1] + " choose: ";
     })
@@ -176,7 +182,12 @@ function createChooseOptions(players, choices) {
         choices.push(playerChoice);
         chooseTextElem.innerText = players[1] + " choose: ";
         if (choices.length === 2) {
-            createShakingAnimation (optionsMainContainerElem, choices, players);
+            if(singleModeFlag) {
+                createShakingAnimation (optionsMainContainerElem, choices, players);          
+            }
+            else {
+                createShakingAnimation (optionsMainContainerElem, choices.reverse(), players);  
+            }
         }   
     })
 
@@ -191,7 +202,12 @@ function createChooseOptions(players, choices) {
         choices.push(playerChoice);
         chooseTextElem.innerText = players[1] + " choose: ";
         if (choices.length === 2) {
-            createShakingAnimation (optionsMainContainerElem, choices, players);
+            if(singleModeFlag) {
+                createShakingAnimation (optionsMainContainerElem, choices, players);          
+            }
+            else {
+                createShakingAnimation (optionsMainContainerElem, choices.reverse(), players);  
+            }
         } 
     })
 }
@@ -218,7 +234,6 @@ function createResultsHTML (parent, choices) {
     const resultsContainerElem = document.createElement('div');
     resultsContainerElem.classList.add('optBtns-container');
     parent.appendChild(resultsContainerElem);
-
     createChoice (resultsContainerElem, choices[1]);
     createChoice (resultsContainerElem, choices[0]);
 }
@@ -302,6 +317,7 @@ function createShakingAnimation (parent, choices, players) {
     parent.appendChild(shakeContainerElem);
 
     setTimeout(() => {
+        console.log(choices)
         createResultsHTML(parent, choices);
         let result = playGame(choices, players);
         displayWinner(result, players);

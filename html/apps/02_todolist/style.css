@@ -157,7 +157,7 @@ select {
 
 .todo-inputForm {
     display: flex;
-    margin: 1.5rem 0.5rem;
+    margin: 1.5rem 0.5rem 0 0.5rem;
 }
 
 .todo-input {
@@ -193,7 +193,7 @@ select {
     color: rgb(196, 79, 79);
     font-size: 1.5rem;
     font-weight: bold;
-    height: 1.7rem;
+    height: 3rem;
 }
 
 /* Media query */

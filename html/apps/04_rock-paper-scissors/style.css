@@ -250,6 +250,7 @@
     }
     .text-choice {
         font-size: 1.5rem;
+        color: black;
     }
     .players {
         font-size: 2rem;
@@ -257,5 +258,8 @@
 
     .players-names {
         margin: 0 1rem;
+    }
+    .display-result {
+        font-size: 2rem;
     }
 }
