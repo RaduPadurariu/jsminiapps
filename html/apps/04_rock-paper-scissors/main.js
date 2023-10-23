@@ -79,6 +79,9 @@ function savePlayersNames () {
         if ((player1InputElem.value === "" || player1InputElem.value === " ") || (player2InputElem.value === "" || player2InputElem.value === " ")) {
             errorNameElem.innerText = "Please enter a valid name";
         }
+        else if (player1InputElem.value.trim() === player2InputElem.value.trim()) {
+            errorNameElem.innerText = "Names must be different!";
+        }
         else {
             errorNameElem.innerText = "";
             rpsPlayers = [player1InputElem.value, player2InputElem.value];
